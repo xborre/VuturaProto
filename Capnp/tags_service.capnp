@@ -6,7 +6,8 @@ interface TagsService {
     struct Tag {
         location @0 :Location;
         fenceInfo @1 :Fence;
-        id @2 :Text;
+        id @2 :UInt32;
+        type @3 :Type;
 
         struct Location {
             latitude @0 :Float64;
@@ -18,6 +19,11 @@ interface TagsService {
             radius @0 :UInt32;
             upper @1 :UInt32;
             lower @2 :UInt32;
+        }
+
+        enum Type {
+            fireFighter @0;
+            fireTruck @1;
         }
     }
 

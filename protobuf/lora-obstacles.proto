@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package vutura.obstacles;
+
+message Obstacle {
+    uint32 ID = 1;           
+    Type type = 2;  
+    Position position = 3;  
+    Fence fence = 4;        
+
+    message Position {      
+        float latitude = 1; 
+        float longitude = 2;
+        float altitude = 3;
+    }
+    
+    message Fence {   
+        uint32 radius = 1;
+        uint32 min = 2;
+        uint32 max = 3;
+    }
+
+    enum Type { 
+        FIRE_FIGHTER = 0;
+        FIRE_TRUCK = 1;
+    }
+
+}
+
+message CollisionWarning {
+    // UNIX timestamp in ms
+    uint64 timestamp = 1;
+
+    // Unique ID of tag
+    uint32 ID = 2;
+
+    // Distance from object
+    float distance = 3;
+}
