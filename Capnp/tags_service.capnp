@@ -1,7 +1,7 @@
 @0xd6754c7d1ed0b666;
 
 interface TagsService {
-    getTags @0 () -> (tags :Tags);
+    getTags @0 (tagIn :Tag) -> (tags :Tags);
 
     struct Tag {
         location @0 :Location;
