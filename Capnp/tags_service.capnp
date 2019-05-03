@@ -34,22 +34,9 @@ interface TagsService {
     getWarning @1 (warningIn :Warning) -> (warning :Warnings);
 
     struct Warning {
-        id @0 :Text;
-        location @1 :Location;
+        timestamp @0 :UInt32;
+        id @1 :UInt32;
         distance @2 :Float64;
-        time @3 :Time;
-
-        struct Location {
-            latitude @0 :Float64;
-            longitude @1 :Float64;
-            altitude @2 :Float64;
-        }
-
-        struct Time {
-            hour @0 :Int16;
-            minute @1 :Int16;
-            second @2 :Int16;
-        }
     }
 
     struct Warnings {

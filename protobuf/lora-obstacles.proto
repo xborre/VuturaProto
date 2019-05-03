@@ -37,3 +37,7 @@ message CollisionWarning {
     // Distance from object
     float distance = 3;
 }
+
+message CollisionWarnings {
+    repeated CollisionWarning warningList = 1;
+}

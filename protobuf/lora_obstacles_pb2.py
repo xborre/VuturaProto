@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='vutura.obstacles',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x14lora-obstacles.proto\x12\x10vutura.obstacles\"\xcd\x02\n\x08Obstacle\x12\n\n\x02ID\x18\x01 \x01(\r\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x1f.vutura.obstacles.Obstacle.Type\x12\x35\n\x08position\x18\x03 \x01(\x0b\x32#.vutura.obstacles.Obstacle.Position\x12/\n\x05\x66\x65nce\x18\x04 \x01(\x0b\x32 .vutura.obstacles.Obstacle.Fence\x1a\x41\n\x08Position\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x03 \x01(\x02\x1a\x31\n\x05\x46\x65nce\x12\x0e\n\x06radius\x18\x01 \x01(\r\x12\x0b\n\x03min\x18\x02 \x01(\r\x12\x0b\n\x03max\x18\x03 \x01(\r\"(\n\x04Type\x12\x10\n\x0c\x46IRE_FIGHTER\x10\x00\x12\x0e\n\nFIRE_TRUCK\x10\x01\"C\n\x10\x43ollisionWarning\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12\n\n\x02ID\x18\x02 \x01(\r\x12\x10\n\x08\x64istance\x18\x03 \x01(\x02\x62\x06proto3')
+  serialized_pb=_b('\n\x14lora-obstacles.proto\x12\x10vutura.obstacles\"\xcd\x02\n\x08Obstacle\x12\n\n\x02ID\x18\x01 \x01(\r\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x1f.vutura.obstacles.Obstacle.Type\x12\x35\n\x08position\x18\x03 \x01(\x0b\x32#.vutura.obstacles.Obstacle.Position\x12/\n\x05\x66\x65nce\x18\x04 \x01(\x0b\x32 .vutura.obstacles.Obstacle.Fence\x1a\x41\n\x08Position\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x03 \x01(\x02\x1a\x31\n\x05\x46\x65nce\x12\x0e\n\x06radius\x18\x01 \x01(\r\x12\x0b\n\x03min\x18\x02 \x01(\r\x12\x0b\n\x03max\x18\x03 \x01(\r\"(\n\x04Type\x12\x10\n\x0c\x46IRE_FIGHTER\x10\x00\x12\x0e\n\nFIRE_TRUCK\x10\x01\"C\n\x10\x43ollisionWarning\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12\n\n\x02ID\x18\x02 \x01(\r\x12\x10\n\x08\x64istance\x18\x03 \x01(\x02\"L\n\x11\x43ollisionWarnings\x12\x37\n\x0bwarningList\x18\x01 \x03(\x0b\x32\".vutura.obstacles.CollisionWarningb\x06proto3')
 )
 
 
@@ -232,14 +232,47 @@ _COLLISIONWARNING = _descriptor.Descriptor(
   serialized_end=445,
 )
 
+
+_COLLISIONWARNINGS = _descriptor.Descriptor(
+  name='CollisionWarnings',
+  full_name='vutura.obstacles.CollisionWarnings',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='warningList', full_name='vutura.obstacles.CollisionWarnings.warningList', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=447,
+  serialized_end=523,
+)
+
 _OBSTACLE_POSITION.containing_type = _OBSTACLE
 _OBSTACLE_FENCE.containing_type = _OBSTACLE
 _OBSTACLE.fields_by_name['type'].enum_type = _OBSTACLE_TYPE
 _OBSTACLE.fields_by_name['position'].message_type = _OBSTACLE_POSITION
 _OBSTACLE.fields_by_name['fence'].message_type = _OBSTACLE_FENCE
 _OBSTACLE_TYPE.containing_type = _OBSTACLE
+_COLLISIONWARNINGS.fields_by_name['warningList'].message_type = _COLLISIONWARNING
 DESCRIPTOR.message_types_by_name['Obstacle'] = _OBSTACLE
 DESCRIPTOR.message_types_by_name['CollisionWarning'] = _COLLISIONWARNING
+DESCRIPTOR.message_types_by_name['CollisionWarnings'] = _COLLISIONWARNINGS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Obstacle = _reflection.GeneratedProtocolMessageType('Obstacle', (_message.Message,), dict(
@@ -271,6 +304,13 @@ CollisionWarning = _reflection.GeneratedProtocolMessageType('CollisionWarning', 
   # @@protoc_insertion_point(class_scope:vutura.obstacles.CollisionWarning)
   ))
 _sym_db.RegisterMessage(CollisionWarning)
+
+CollisionWarnings = _reflection.GeneratedProtocolMessageType('CollisionWarnings', (_message.Message,), dict(
+  DESCRIPTOR = _COLLISIONWARNINGS,
+  __module__ = 'lora_obstacles_pb2'
+  # @@protoc_insertion_point(class_scope:vutura.obstacles.CollisionWarnings)
+  ))
+_sym_db.RegisterMessage(CollisionWarnings)
 
 
 # @@protoc_insertion_point(module_scope)
