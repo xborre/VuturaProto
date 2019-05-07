@@ -4,10 +4,11 @@ interface TagsService {
     getTags @0 (tagIn :Tag) -> (tags :Tags);
 
     struct Tag {
-        location @0 :Location;
-        fenceInfo @1 :Fence;
-        id @2 :UInt32;
-        type @3 :Type;
+        timestamp @0 :UInt32;
+        location @1 :Location;
+        fenceInfo @2 :Fence;
+        id @3 :UInt32;
+        type @4 :Type;
 
         struct Location {
             latitude @0 :Float64;
