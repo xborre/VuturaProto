@@ -1,7 +1,7 @@
 @0xcdd6af4d789f2c5b;
 
 interface GPSService {
-	getGPSFix @0 () -> (fix :GPSFix);
+	getGPSFix @0 (fixIn :GPSFix) -> (fix :GPSFix);
 
 	struct GPSFix {
 		enum Status {
