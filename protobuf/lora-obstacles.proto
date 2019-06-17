@@ -2,6 +2,16 @@ syntax = "proto3";
 
 package vutura.obstacles;
 
+import "google/protobuf/empty.proto";
+
+service TagsService {
+    rpc GetTags(google.protobuf.Empty) returns (TagsResponse);
+}
+
+message TagsResponse {
+    repeated Obstacle obstacles = 1;
+}
+
 message Obstacle {
     uint32 ID = 1;           
     Type type = 2;  
