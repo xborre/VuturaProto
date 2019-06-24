@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package vutura.gps;
+
+import "google/protobuf/empty.proto";
+
+service GPSService {
+    rpc GetGPSData(google.protobuf.Empty) returns (GPSFix);
+
+    rpc SetGPSData(GPSFix) returns (google.protobuf.Empty);
+ }
+
+message GPSFix {
+    uint64 time = 1;
+    Status status = 2;
+    float latitude = 3;
+    float longitude = 4;
+    float altitude = 5;
+    float track = 6;
+    float speed = 7;
+    float climb = 8;
+    Uncertainties uncertainties = 9;
+
+    enum Status {
+        notSeen = 0;
+        noFix = 1;
+        fix2D = 3;
+        fix3D = 4;
+    }
+
+    message Uncertainties {
+        uint64 time = 1;
+        Status status = 2;
+        float latitude = 3;
+        float longitude = 4;
+        float altitude = 5;
+        float track = 6;
+        float speed = 7;
+        float climb = 8;
+    }
+
+}
