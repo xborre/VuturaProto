@@ -6,6 +6,8 @@ import "google/protobuf/empty.proto";
 
 service TagsService {
     rpc GetTags(google.protobuf.Empty) returns (TagsResponse);
+
+    rpc SetTag(Obstacle) returns (google.protobuf.Empty);
 }
 
 message TagsResponse {

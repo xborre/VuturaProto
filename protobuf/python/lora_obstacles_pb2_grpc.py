@@ -20,6 +20,11 @@ class TagsServiceStub(object):
         request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
         response_deserializer=lora__obstacles__pb2.TagsResponse.FromString,
         )
+    self.SetTag = channel.unary_unary(
+        '/vutura.obstacles.TagsService/SetTag',
+        request_serializer=lora__obstacles__pb2.Obstacle.SerializeToString,
+        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        )
 
 
 class TagsServiceServicer(object):
@@ -33,6 +38,13 @@ class TagsServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def SetTag(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_TagsServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -40,6 +52,11 @@ def add_TagsServiceServicer_to_server(servicer, server):
           servicer.GetTags,
           request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
           response_serializer=lora__obstacles__pb2.TagsResponse.SerializeToString,
+      ),
+      'SetTag': grpc.unary_unary_rpc_method_handler(
+          servicer.SetTag,
+          request_deserializer=lora__obstacles__pb2.Obstacle.FromString,
+          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
