@@ -8,6 +8,10 @@ service TagsService {
     rpc GetTags(google.protobuf.Empty) returns (TagsResponse);
 
     rpc SetTag(Obstacle) returns (google.protobuf.Empty);
+
+    rpc GetWarnings(google.protobuf.Empty) returns (CollisionWarnings);
+
+    rpc setWarnings(CollisionWarning) returns (google.protobuf.Empty);
 }
 
 message TagsResponse {

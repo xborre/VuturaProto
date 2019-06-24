@@ -25,6 +25,16 @@ class TagsServiceStub(object):
         request_serializer=lora__obstacles__pb2.Obstacle.SerializeToString,
         response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
         )
+    self.GetWarnings = channel.unary_unary(
+        '/vutura.obstacles.TagsService/GetWarnings',
+        request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+        response_deserializer=lora__obstacles__pb2.CollisionWarnings.FromString,
+        )
+    self.setWarnings = channel.unary_unary(
+        '/vutura.obstacles.TagsService/setWarnings',
+        request_serializer=lora__obstacles__pb2.CollisionWarning.SerializeToString,
+        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        )
 
 
 class TagsServiceServicer(object):
@@ -45,6 +55,20 @@ class TagsServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetWarnings(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def setWarnings(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_TagsServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -56,6 +80,16 @@ def add_TagsServiceServicer_to_server(servicer, server):
       'SetTag': grpc.unary_unary_rpc_method_handler(
           servicer.SetTag,
           request_deserializer=lora__obstacles__pb2.Obstacle.FromString,
+          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+      ),
+      'GetWarnings': grpc.unary_unary_rpc_method_handler(
+          servicer.GetWarnings,
+          request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+          response_serializer=lora__obstacles__pb2.CollisionWarnings.SerializeToString,
+      ),
+      'setWarnings': grpc.unary_unary_rpc_method_handler(
+          servicer.setWarnings,
+          request_deserializer=lora__obstacles__pb2.CollisionWarning.FromString,
           response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
       ),
   }
