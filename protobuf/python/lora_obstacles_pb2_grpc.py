@@ -30,8 +30,8 @@ class TagsServiceStub(object):
         request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
         response_deserializer=lora__obstacles__pb2.CollisionWarnings.FromString,
         )
-    self.setWarnings = channel.unary_unary(
-        '/vutura.obstacles.TagsService/setWarnings',
+    self.SetWarning = channel.unary_unary(
+        '/vutura.obstacles.TagsService/SetWarning',
         request_serializer=lora__obstacles__pb2.CollisionWarning.SerializeToString,
         response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
         )
@@ -62,7 +62,7 @@ class TagsServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def setWarnings(self, request, context):
+  def SetWarning(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -87,8 +87,8 @@ def add_TagsServiceServicer_to_server(servicer, server):
           request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
           response_serializer=lora__obstacles__pb2.CollisionWarnings.SerializeToString,
       ),
-      'setWarnings': grpc.unary_unary_rpc_method_handler(
-          servicer.setWarnings,
+      'SetWarning': grpc.unary_unary_rpc_method_handler(
+          servicer.SetWarning,
           request_deserializer=lora__obstacles__pb2.CollisionWarning.FromString,
           response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
       ),

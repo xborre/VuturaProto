@@ -11,7 +11,7 @@ service TagsService {
 
     rpc GetWarnings(google.protobuf.Empty) returns (CollisionWarnings);
 
-    rpc setWarnings(CollisionWarning) returns (google.protobuf.Empty);
+    rpc SetWarning(CollisionWarning) returns (google.protobuf.Empty);
 }
 
 message TagsResponse {
