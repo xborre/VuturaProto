@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='vutura.obstacles',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x14lora-obstacles.proto\x12\x10vutura.obstacles\x1a\x1bgoogle/protobuf/empty.proto\"=\n\x0cTagsResponse\x12-\n\tobstacles\x18\x01 \x03(\x0b\x32\x1a.vutura.obstacles.Obstacle\"\xcd\x02\n\x08Obstacle\x12\n\n\x02ID\x18\x01 \x01(\r\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x1f.vutura.obstacles.Obstacle.Type\x12\x35\n\x08position\x18\x03 \x01(\x0b\x32#.vutura.obstacles.Obstacle.Position\x12/\n\x05\x66\x65nce\x18\x04 \x01(\x0b\x32 .vutura.obstacles.Obstacle.Fence\x1a\x41\n\x08Position\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x03 \x01(\x02\x1a\x31\n\x05\x46\x65nce\x12\x0e\n\x06radius\x18\x01 \x01(\r\x12\x0b\n\x03min\x18\x02 \x01(\r\x12\x0b\n\x03max\x18\x03 \x01(\r\"(\n\x04Type\x12\x10\n\x0c\x46IRE_FIGHTER\x10\x00\x12\x0e\n\nFIRE_TRUCK\x10\x01\"C\n\x10\x43ollisionWarning\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12\n\n\x02ID\x18\x02 \x01(\r\x12\x10\n\x08\x64istance\x18\x03 \x01(\x02\"L\n\x11\x43ollisionWarnings\x12\x37\n\x0bwarningList\x18\x01 \x03(\x0b\x32\".vutura.obstacles.CollisionWarning2\xa5\x02\n\x0bTagsService\x12\x41\n\x07GetTags\x12\x16.google.protobuf.Empty\x1a\x1e.vutura.obstacles.TagsResponse\x12<\n\x06SetTag\x12\x1a.vutura.obstacles.Obstacle\x1a\x16.google.protobuf.Empty\x12J\n\x0bGetWarnings\x12\x16.google.protobuf.Empty\x1a#.vutura.obstacles.CollisionWarnings\x12I\n\x0bsetWarnings\x12\".vutura.obstacles.CollisionWarning\x1a\x16.google.protobuf.Emptyb\x06proto3')
+  serialized_pb=_b('\n\x14lora-obstacles.proto\x12\x10vutura.obstacles\x1a\x1bgoogle/protobuf/empty.proto\"=\n\x0cTagsResponse\x12-\n\tobstacles\x18\x01 \x03(\x0b\x32\x1a.vutura.obstacles.Obstacle\"\xcd\x02\n\x08Obstacle\x12\n\n\x02ID\x18\x01 \x01(\r\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x1f.vutura.obstacles.Obstacle.Type\x12\x35\n\x08position\x18\x03 \x01(\x0b\x32#.vutura.obstacles.Obstacle.Position\x12/\n\x05\x66\x65nce\x18\x04 \x01(\x0b\x32 .vutura.obstacles.Obstacle.Fence\x1a\x41\n\x08Position\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x03 \x01(\x02\x1a\x31\n\x05\x46\x65nce\x12\x0e\n\x06radius\x18\x01 \x01(\r\x12\x0b\n\x03min\x18\x02 \x01(\r\x12\x0b\n\x03max\x18\x03 \x01(\r\"(\n\x04Type\x12\x10\n\x0c\x46IRE_FIGHTER\x10\x00\x12\x0e\n\nFIRE_TRUCK\x10\x01\"C\n\x10\x43ollisionWarning\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12\n\n\x02ID\x18\x02 \x01(\r\x12\x10\n\x08\x64istance\x18\x03 \x01(\x02\"L\n\x11\x43ollisionWarnings\x12\x37\n\x0bwarningList\x18\x01 \x03(\x0b\x32\".vutura.obstacles.CollisionWarning2\xa4\x02\n\x0bTagsService\x12\x41\n\x07GetTags\x12\x16.google.protobuf.Empty\x1a\x1e.vutura.obstacles.TagsResponse\x12<\n\x06SetTag\x12\x1a.vutura.obstacles.Obstacle\x1a\x16.google.protobuf.Empty\x12J\n\x0bGetWarnings\x12\x16.google.protobuf.Empty\x1a#.vutura.obstacles.CollisionWarnings\x12H\n\nSetWarning\x12\".vutura.obstacles.CollisionWarning\x1a\x16.google.protobuf.Emptyb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -364,7 +364,7 @@ _TAGSSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=618,
-  serialized_end=911,
+  serialized_end=910,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetTags',
@@ -394,8 +394,8 @@ _TAGSSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='setWarnings',
-    full_name='vutura.obstacles.TagsService.setWarnings',
+    name='SetWarning',
+    full_name='vutura.obstacles.TagsService.SetWarning',
     index=3,
     containing_service=None,
     input_type=_COLLISIONWARNING,
