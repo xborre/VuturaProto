@@ -2,7 +2,7 @@ PROTOS_DIR := ./protobuf
 PROTO_FILES := $(shell find $(PROTOS_DIR) -name '*.proto')
 SOURCE_DIR := ./protobuf
 
-all: python
+all: cpp
 
 golang:
 	@mkdir -p $(SOURCE_DIR)/go
@@ -16,3 +16,11 @@ python:
 		python -m grpc_tools.protoc -I$(PROTOS_DIR) --python_out=$(SOURCE_DIR)/python $$x; \
 		python -m grpc_tools.protoc -I$(PROTOS_DIR) --grpc_python_out=$(SOURCE_DIR)/python $$x; \
 	 done
+
+cpp:
+	@mkdir -p $(SOURCE_DIR)/cpp
+	@for x in $(PROTO_FILES); do \
+		sudo protoc -I$(PROTOS_DIR) --cpp_out=$(SOURCE_DIR)/cpp $$x; \
+		sudo protoc -I$(PROTOS_DIR) --grpc_out=$(SOURCE_DIR)/cpp --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` $$x; \
+	 done
+	
