@@ -6,20 +6,23 @@
 
 #include "lora-obstacles.pb.h"
 
-#include <grpc++/impl/codegen/async_stream.h>
-#include <grpc++/impl/codegen/async_unary_call.h>
-#include <grpc++/impl/codegen/method_handler_impl.h>
-#include <grpc++/impl/codegen/proto_utils.h>
-#include <grpc++/impl/codegen/rpc_method.h>
-#include <grpc++/impl/codegen/service_type.h>
-#include <grpc++/impl/codegen/status.h>
-#include <grpc++/impl/codegen/stub_options.h>
-#include <grpc++/impl/codegen/sync_stream.h>
+#include <functional>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/impl/codegen/client_callback.h>
+#include <grpcpp/impl/codegen/method_handler_impl.h>
+#include <grpcpp/impl/codegen/proto_utils.h>
+#include <grpcpp/impl/codegen/rpc_method.h>
+#include <grpcpp/impl/codegen/server_callback.h>
+#include <grpcpp/impl/codegen/service_type.h>
+#include <grpcpp/impl/codegen/status.h>
+#include <grpcpp/impl/codegen/stub_options.h>
+#include <grpcpp/impl/codegen/sync_stream.h>
 
 namespace grpc {
 class CompletionQueue;
 class Channel;
-class RpcService;
 class ServerCompletionQueue;
 class ServerContext;
 }  // namespace grpc
@@ -29,6 +32,9 @@ namespace obstacles {
 
 class TagsService final {
  public:
+  static constexpr char const* service_full_name() {
+    return "vutura.obstacles.TagsService";
+  }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
@@ -36,23 +42,52 @@ class TagsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::TagsResponse>> AsyncGetTags(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::TagsResponse>>(AsyncGetTagsRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::TagsResponse>> PrepareAsyncGetTags(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::TagsResponse>>(PrepareAsyncGetTagsRaw(context, request, cq));
+    }
     virtual ::grpc::Status SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncSetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncSetTagRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncSetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncSetTagRaw(context, request, cq));
     }
     virtual ::grpc::Status GetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::vutura::obstacles::CollisionWarnings* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::CollisionWarnings>> AsyncGetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::CollisionWarnings>>(AsyncGetWarningsRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::CollisionWarnings>> PrepareAsyncGetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::CollisionWarnings>>(PrepareAsyncGetWarningsRaw(context, request, cq));
+    }
     virtual ::grpc::Status SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncSetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncSetWarningRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncSetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncSetWarningRaw(context, request, cq));
+    }
+    class experimental_async_interface {
+     public:
+      virtual ~experimental_async_interface() {}
+      virtual void GetTags(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetWarnings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+    };
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::TagsResponse>* AsyncGetTagsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::TagsResponse>* PrepareAsyncGetTagsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::CollisionWarnings>* AsyncGetWarningsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::obstacles::CollisionWarnings>* PrepareAsyncGetWarningsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -61,29 +96,64 @@ class TagsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>> AsyncGetTags(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>>(AsyncGetTagsRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>> PrepareAsyncGetTags(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>>(PrepareAsyncGetTagsRaw(context, request, cq));
+    }
     ::grpc::Status SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::google::protobuf::Empty* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncSetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncSetTagRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncSetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncSetTagRaw(context, request, cq));
     }
     ::grpc::Status GetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::vutura::obstacles::CollisionWarnings* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>> AsyncGetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>>(AsyncGetWarningsRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>> PrepareAsyncGetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>>(PrepareAsyncGetWarningsRaw(context, request, cq));
+    }
     ::grpc::Status SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::google::protobuf::Empty* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncSetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncSetWarningRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncSetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncSetWarningRaw(context, request, cq));
+    }
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
+     public:
+      void GetTags(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void GetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)>) override;
+      void GetWarnings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)>) override;
+      void SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+     private:
+      friend class Stub;
+      explicit experimental_async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>* AsyncGetTagsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>* PrepareAsyncGetTagsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>* AsyncGetWarningsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>* PrepareAsyncGetWarningsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::RpcMethod rpcmethod_GetTags_;
-    const ::grpc::RpcMethod rpcmethod_SetTag_;
-    const ::grpc::RpcMethod rpcmethod_GetWarnings_;
-    const ::grpc::RpcMethod rpcmethod_SetWarning_;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_GetTags_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetTag_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetWarnings_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetWarning_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -108,7 +178,7 @@ class TagsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) final override {
+    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -128,7 +198,7 @@ class TagsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) final override {
+    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -148,7 +218,7 @@ class TagsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) final override {
+    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -168,7 +238,7 @@ class TagsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) final override {
+    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -177,6 +247,107 @@ class TagsService final {
     }
   };
   typedef WithAsyncMethod_GetTags<WithAsyncMethod_SetTag<WithAsyncMethod_GetWarnings<WithAsyncMethod_SetWarning<Service > > > > AsyncService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetTags : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_GetTags() {
+      ::grpc::Service::experimental().MarkMethodCallback(0,
+        new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::vutura::obstacles::TagsResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::google::protobuf::Empty* request,
+                 ::vutura::obstacles::TagsResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->GetTags(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithCallbackMethod_GetTags() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_SetTag : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_SetTag() {
+      ::grpc::Service::experimental().MarkMethodCallback(1,
+        new ::grpc::internal::CallbackUnaryHandler< ::vutura::obstacles::Obstacle, ::google::protobuf::Empty>(
+          [this](::grpc::ServerContext* context,
+                 const ::vutura::obstacles::Obstacle* request,
+                 ::google::protobuf::Empty* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->SetTag(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithCallbackMethod_SetTag() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetWarnings : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_GetWarnings() {
+      ::grpc::Service::experimental().MarkMethodCallback(2,
+        new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::vutura::obstacles::CollisionWarnings>(
+          [this](::grpc::ServerContext* context,
+                 const ::google::protobuf::Empty* request,
+                 ::vutura::obstacles::CollisionWarnings* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->GetWarnings(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithCallbackMethod_GetWarnings() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_SetWarning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_SetWarning() {
+      ::grpc::Service::experimental().MarkMethodCallback(3,
+        new ::grpc::internal::CallbackUnaryHandler< ::vutura::obstacles::CollisionWarning, ::google::protobuf::Empty>(
+          [this](::grpc::ServerContext* context,
+                 const ::vutura::obstacles::CollisionWarning* request,
+                 ::google::protobuf::Empty* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->SetWarning(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithCallbackMethod_SetWarning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  typedef ExperimentalWithCallbackMethod_GetTags<ExperimentalWithCallbackMethod_SetTag<ExperimentalWithCallbackMethod_GetWarnings<ExperimentalWithCallbackMethod_SetWarning<Service > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetTags : public BaseClass {
    private:
@@ -189,7 +360,7 @@ class TagsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) final override {
+    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -206,7 +377,7 @@ class TagsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) final override {
+    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -223,7 +394,7 @@ class TagsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) final override {
+    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -240,10 +411,190 @@ class TagsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) final override {
+    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetTags : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetTags() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_GetTags() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTags(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SetTag : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_SetTag() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_SetTag() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetTag(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetWarnings : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetWarnings() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_GetWarnings() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetWarnings(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SetWarning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_SetWarning() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_SetWarning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetWarning(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetTags : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetTags() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(0,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->GetTags(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetTags() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetTags(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_SetTag : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_SetTag() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(1,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->SetTag(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_SetTag() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void SetTag(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetWarnings : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetWarnings() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(2,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->GetWarnings(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetWarnings() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetWarnings(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_SetWarning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_SetWarning() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(3,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->SetWarning(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_SetWarning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void SetWarning(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetTags : public BaseClass {
@@ -252,13 +603,13 @@ class TagsService final {
    public:
     WithStreamedUnaryMethod_GetTags() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::StreamedUnaryHandler< ::google::protobuf::Empty, ::vutura::obstacles::TagsResponse>(std::bind(&WithStreamedUnaryMethod_GetTags<BaseClass>::StreamedGetTags, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::google::protobuf::Empty, ::vutura::obstacles::TagsResponse>(std::bind(&WithStreamedUnaryMethod_GetTags<BaseClass>::StreamedGetTags, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetTags() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) final override {
+    ::grpc::Status GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -272,13 +623,13 @@ class TagsService final {
    public:
     WithStreamedUnaryMethod_SetTag() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::StreamedUnaryHandler< ::vutura::obstacles::Obstacle, ::google::protobuf::Empty>(std::bind(&WithStreamedUnaryMethod_SetTag<BaseClass>::StreamedSetTag, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::vutura::obstacles::Obstacle, ::google::protobuf::Empty>(std::bind(&WithStreamedUnaryMethod_SetTag<BaseClass>::StreamedSetTag, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_SetTag() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) final override {
+    ::grpc::Status SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -292,13 +643,13 @@ class TagsService final {
    public:
     WithStreamedUnaryMethod_GetWarnings() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::StreamedUnaryHandler< ::google::protobuf::Empty, ::vutura::obstacles::CollisionWarnings>(std::bind(&WithStreamedUnaryMethod_GetWarnings<BaseClass>::StreamedGetWarnings, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::google::protobuf::Empty, ::vutura::obstacles::CollisionWarnings>(std::bind(&WithStreamedUnaryMethod_GetWarnings<BaseClass>::StreamedGetWarnings, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetWarnings() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) final override {
+    ::grpc::Status GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -312,13 +663,13 @@ class TagsService final {
    public:
     WithStreamedUnaryMethod_SetWarning() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::StreamedUnaryHandler< ::vutura::obstacles::CollisionWarning, ::google::protobuf::Empty>(std::bind(&WithStreamedUnaryMethod_SetWarning<BaseClass>::StreamedSetWarning, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::vutura::obstacles::CollisionWarning, ::google::protobuf::Empty>(std::bind(&WithStreamedUnaryMethod_SetWarning<BaseClass>::StreamedSetWarning, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_SetWarning() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) final override {
+    ::grpc::Status SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }

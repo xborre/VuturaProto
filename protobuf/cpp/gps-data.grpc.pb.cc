@@ -5,14 +5,17 @@
 #include "gps-data.pb.h"
 #include "gps-data.grpc.pb.h"
 
-#include <grpc++/impl/codegen/async_stream.h>
-#include <grpc++/impl/codegen/async_unary_call.h>
-#include <grpc++/impl/codegen/channel_interface.h>
-#include <grpc++/impl/codegen/client_unary_call.h>
-#include <grpc++/impl/codegen/method_handler_impl.h>
-#include <grpc++/impl/codegen/rpc_service_method.h>
-#include <grpc++/impl/codegen/service_type.h>
-#include <grpc++/impl/codegen/sync_stream.h>
+#include <functional>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/impl/codegen/channel_interface.h>
+#include <grpcpp/impl/codegen/client_unary_call.h>
+#include <grpcpp/impl/codegen/client_callback.h>
+#include <grpcpp/impl/codegen/method_handler_impl.h>
+#include <grpcpp/impl/codegen/rpc_service_method.h>
+#include <grpcpp/impl/codegen/server_callback.h>
+#include <grpcpp/impl/codegen/service_type.h>
+#include <grpcpp/impl/codegen/sync_stream.h>
 namespace vutura {
 namespace gps {
 
@@ -22,41 +25,66 @@ static const char* GPSService_method_names[] = {
 };
 
 std::unique_ptr< GPSService::Stub> GPSService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
   std::unique_ptr< GPSService::Stub> stub(new GPSService::Stub(channel));
   return stub;
 }
 
 GPSService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_GetGPSData_(GPSService_method_names[0], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetGPSData_(GPSService_method_names[1], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_GetGPSData_(GPSService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetGPSData_(GPSService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status GPSService::Stub::GetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::vutura::gps::GPSFix* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_GetGPSData_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetGPSData_, context, request, response);
+}
+
+void GPSService::Stub::experimental_async::GetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetGPSData_, context, request, response, std::move(f));
+}
+
+void GPSService::Stub::experimental_async::GetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetGPSData_, context, request, response, std::move(f));
 }
 
 ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>* GPSService::Stub::AsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>(channel_.get(), cq, rpcmethod_GetGPSData_, context, request);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::gps::GPSFix>::Create(channel_.get(), cq, rpcmethod_GetGPSData_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>* GPSService::Stub::PrepareAsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::gps::GPSFix>::Create(channel_.get(), cq, rpcmethod_GetGPSData_, context, request, false);
 }
 
 ::grpc::Status GPSService::Stub::SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::google::protobuf::Empty* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetGPSData_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetGPSData_, context, request, response);
+}
+
+void GPSService::Stub::experimental_async::SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetGPSData_, context, request, response, std::move(f));
+}
+
+void GPSService::Stub::experimental_async::SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetGPSData_, context, request, response, std::move(f));
 }
 
 ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* GPSService::Stub::AsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>(channel_.get(), cq, rpcmethod_SetGPSData_, context, request);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_SetGPSData_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* GPSService::Stub::PrepareAsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_SetGPSData_, context, request, false);
 }
 
 GPSService::Service::Service() {
-  AddMethod(new ::grpc::RpcServiceMethod(
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       GPSService_method_names[0],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< GPSService::Service, ::google::protobuf::Empty, ::vutura::gps::GPSFix>(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< GPSService::Service, ::google::protobuf::Empty, ::vutura::gps::GPSFix>(
           std::mem_fn(&GPSService::Service::GetGPSData), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       GPSService_method_names[1],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< GPSService::Service, ::vutura::gps::GPSFix, ::google::protobuf::Empty>(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< GPSService::Service, ::vutura::gps::GPSFix, ::google::protobuf::Empty>(
           std::mem_fn(&GPSService::Service::SetGPSData), this)));
 }
 
