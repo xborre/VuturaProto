@@ -19,26 +19,29 @@ message TagsResponse {
 }
 
 message Obstacle {
-    uint32 ID = 1;           
-    Type type = 2;  
-    Position position = 3;  
-    Fence fence = 4;        
+    uint32 ID = 1;
+    Type type = 2;
+    Position position = 3;
+    Fence fence = 4;
 
-    message Position {      
-        float latitude = 1; 
+    message Position {
+        float latitude = 1;
         float longitude = 2;
         float altitude = 3;
     }
-    
-    message Fence {   
+
+    message Fence {
         uint32 radius = 1;
         uint32 min = 2;
         uint32 max = 3;
     }
 
-    enum Type { 
-        FIRE_FIGHTER = 0;
-        FIRE_TRUCK = 1;
+    enum Type {
+        UNIDENTIFIED_OBJECT = 0;
+        FIRE_FIGHTER = 1;
+        FIRE_TRUCK = 2;
+        FIRE_UAV = 3;
+        UNIDENTIFIED_UAV = 4;
     }
 
 }
