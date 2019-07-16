@@ -30,6 +30,8 @@ class ServerContext;
 namespace vutura {
 namespace gps {
 
+// import "google/protobuf/empty.proto";
+//
 class GPSService final {
  public:
   static constexpr char const* service_full_name() {
@@ -38,59 +40,59 @@ class GPSService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status GetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::vutura::gps::GPSFix* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>> AsyncGetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status GetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::vutura::gps::GPSFix* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>> AsyncGetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>>(AsyncGetGPSDataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>> PrepareAsyncGetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>> PrepareAsyncGetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>>(PrepareAsyncGetGPSDataRaw(context, request, cq));
     }
-    virtual ::grpc::Status SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::google::protobuf::Empty* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncSetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncSetGPSDataRaw(context, request, cq));
+    virtual ::grpc::Status SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::vutura::gps::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::Empty>> AsyncSetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::Empty>>(AsyncSetGPSDataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncSetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncSetGPSDataRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::Empty>> PrepareAsyncSetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::Empty>>(PrepareAsyncSetGPSDataRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void GetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::Empty* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>* AsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>* PrepareAsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>* AsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::GPSFix>* PrepareAsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::Empty>* AsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vutura::gps::Empty>* PrepareAsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status GetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::vutura::gps::GPSFix* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>> AsyncGetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status GetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::vutura::gps::GPSFix* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>> AsyncGetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>>(AsyncGetGPSDataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>> PrepareAsyncGetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>> PrepareAsyncGetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>>(PrepareAsyncGetGPSDataRaw(context, request, cq));
     }
-    ::grpc::Status SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::google::protobuf::Empty* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncSetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncSetGPSDataRaw(context, request, cq));
+    ::grpc::Status SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::vutura::gps::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::Empty>> AsyncSetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::Empty>>(AsyncSetGPSDataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncSetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncSetGPSDataRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::Empty>> PrepareAsyncSetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vutura::gps::Empty>>(PrepareAsyncSetGPSDataRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void GetGPSData(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) override;
+      void GetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) override;
       void GetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) override;
-      void SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      void SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response, std::function<void(::grpc::Status)>) override;
+      void SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::Empty* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -102,10 +104,10 @@ class GPSService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>* AsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>* PrepareAsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>* AsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vutura::gps::GPSFix>* PrepareAsyncGetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vutura::gps::Empty>* AsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vutura::gps::Empty>* PrepareAsyncSetGPSDataRaw(::grpc::ClientContext* context, const ::vutura::gps::GPSFix& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetGPSData_;
     const ::grpc::internal::RpcMethod rpcmethod_SetGPSData_;
   };
@@ -115,8 +117,8 @@ class GPSService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response);
-    virtual ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response);
+    virtual ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetGPSData : public BaseClass {
@@ -130,11 +132,11 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response) override {
+    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetGPSData(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::vutura::gps::GPSFix>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetGPSData(::grpc::ServerContext* context, ::vutura::gps::Empty* request, ::grpc::ServerAsyncResponseWriter< ::vutura::gps::GPSFix>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -150,11 +152,11 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response) override {
+    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestSetGPSData(::grpc::ServerContext* context, ::vutura::gps::GPSFix* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestSetGPSData(::grpc::ServerContext* context, ::vutura::gps::GPSFix* request, ::grpc::ServerAsyncResponseWriter< ::vutura::gps::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -166,9 +168,9 @@ class GPSService final {
    public:
     ExperimentalWithCallbackMethod_GetGPSData() {
       ::grpc::Service::experimental().MarkMethodCallback(0,
-        new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::vutura::gps::GPSFix>(
+        new ::grpc::internal::CallbackUnaryHandler< ::vutura::gps::Empty, ::vutura::gps::GPSFix>(
           [this](::grpc::ServerContext* context,
-                 const ::google::protobuf::Empty* request,
+                 const ::vutura::gps::Empty* request,
                  ::vutura::gps::GPSFix* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->GetGPSData(context, request, response, controller);
@@ -178,11 +180,11 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response) override {
+    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void GetGPSData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetGPSData(::grpc::ServerContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_SetGPSData : public BaseClass {
@@ -191,10 +193,10 @@ class GPSService final {
    public:
     ExperimentalWithCallbackMethod_SetGPSData() {
       ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc::internal::CallbackUnaryHandler< ::vutura::gps::GPSFix, ::google::protobuf::Empty>(
+        new ::grpc::internal::CallbackUnaryHandler< ::vutura::gps::GPSFix, ::vutura::gps::Empty>(
           [this](::grpc::ServerContext* context,
                  const ::vutura::gps::GPSFix* request,
-                 ::google::protobuf::Empty* response,
+                 ::vutura::gps::Empty* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->SetGPSData(context, request, response, controller);
                  }));
@@ -203,11 +205,11 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response) override {
+    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   typedef ExperimentalWithCallbackMethod_GetGPSData<ExperimentalWithCallbackMethod_SetGPSData<Service > > ExperimentalCallbackService;
   template <class BaseClass>
@@ -222,7 +224,7 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response) override {
+    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -239,7 +241,7 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response) override {
+    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -256,7 +258,7 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response) override {
+    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -276,7 +278,7 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response) override {
+    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -303,7 +305,7 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response) override {
+    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -328,7 +330,7 @@ class GPSService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response) override {
+    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -341,18 +343,18 @@ class GPSService final {
    public:
     WithStreamedUnaryMethod_GetGPSData() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::google::protobuf::Empty, ::vutura::gps::GPSFix>(std::bind(&WithStreamedUnaryMethod_GetGPSData<BaseClass>::StreamedGetGPSData, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::vutura::gps::Empty, ::vutura::gps::GPSFix>(std::bind(&WithStreamedUnaryMethod_GetGPSData<BaseClass>::StreamedGetGPSData, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetGPSData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::gps::GPSFix* response) override {
+    ::grpc::Status GetGPSData(::grpc::ServerContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetGPSData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::vutura::gps::GPSFix>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetGPSData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vutura::gps::Empty,::vutura::gps::GPSFix>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_SetGPSData : public BaseClass {
@@ -361,18 +363,18 @@ class GPSService final {
    public:
     WithStreamedUnaryMethod_SetGPSData() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::vutura::gps::GPSFix, ::google::protobuf::Empty>(std::bind(&WithStreamedUnaryMethod_SetGPSData<BaseClass>::StreamedSetGPSData, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::vutura::gps::GPSFix, ::vutura::gps::Empty>(std::bind(&WithStreamedUnaryMethod_SetGPSData<BaseClass>::StreamedSetGPSData, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_SetGPSData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::google::protobuf::Empty* response) override {
+    ::grpc::Status SetGPSData(::grpc::ServerContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedSetGPSData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vutura::gps::GPSFix,::google::protobuf::Empty>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedSetGPSData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vutura::gps::GPSFix,::vutura::gps::Empty>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_GetGPSData<WithStreamedUnaryMethod_SetGPSData<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;

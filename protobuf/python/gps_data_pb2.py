@@ -13,7 +13,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='vutura.gps',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0egps-data.proto\x12\nvutura.gps\x1a\x1bgoogle/protobuf/empty.proto\"\xc5\x03\n\x06GPSFix\x12\x0c\n\x04time\x18\x01 \x01(\x04\x12)\n\x06status\x18\x02 \x01(\x0e\x32\x19.vutura.gps.GPSFix.Status\x12\x10\n\x08latitude\x18\x03 \x01(\x02\x12\x11\n\tlongitude\x18\x04 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x05 \x01(\x02\x12\r\n\x05track\x18\x06 \x01(\x02\x12\r\n\x05speed\x18\x07 \x01(\x02\x12\r\n\x05\x63limb\x18\x08 \x01(\x02\x12\x37\n\runcertainties\x18\t \x01(\x0b\x32 .vutura.gps.GPSFix.Uncertainties\x1a\xac\x01\n\rUncertainties\x12\x0c\n\x04time\x18\x01 \x01(\x04\x12)\n\x06status\x18\x02 \x01(\x0e\x32\x19.vutura.gps.GPSFix.Status\x12\x10\n\x08latitude\x18\x03 \x01(\x02\x12\x11\n\tlongitude\x18\x04 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x05 \x01(\x02\x12\r\n\x05track\x18\x06 \x01(\x02\x12\r\n\x05speed\x18\x07 \x01(\x02\x12\r\n\x05\x63limb\x18\x08 \x01(\x02\"6\n\x06Status\x12\x0b\n\x07notSeen\x10\x00\x12\t\n\x05noFix\x10\x01\x12\t\n\x05\x66ix2D\x10\x03\x12\t\n\x05\x66ix3D\x10\x04\x32\x80\x01\n\nGPSService\x12\x38\n\nGetGPSData\x12\x16.google.protobuf.Empty\x1a\x12.vutura.gps.GPSFix\x12\x38\n\nSetGPSData\x12\x12.vutura.gps.GPSFix\x1a\x16.google.protobuf.Emptyb\x06proto3')
-  ,
-  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\x0egps-data.proto\x12\nvutura.gps\"\x07\n\x05\x45mpty\"\xc5\x03\n\x06GPSFix\x12\x0c\n\x04time\x18\x01 \x01(\x04\x12)\n\x06status\x18\x02 \x01(\x0e\x32\x19.vutura.gps.GPSFix.Status\x12\x10\n\x08latitude\x18\x03 \x01(\x02\x12\x11\n\tlongitude\x18\x04 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x05 \x01(\x02\x12\r\n\x05track\x18\x06 \x01(\x02\x12\r\n\x05speed\x18\x07 \x01(\x02\x12\r\n\x05\x63limb\x18\x08 \x01(\x02\x12\x37\n\runcertainties\x18\t \x01(\x0b\x32 .vutura.gps.GPSFix.Uncertainties\x1a\xac\x01\n\rUncertainties\x12\x0c\n\x04time\x18\x01 \x01(\x04\x12)\n\x06status\x18\x02 \x01(\x0e\x32\x19.vutura.gps.GPSFix.Status\x12\x10\n\x08latitude\x18\x03 \x01(\x02\x12\x11\n\tlongitude\x18\x04 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x05 \x01(\x02\x12\r\n\x05track\x18\x06 \x01(\x02\x12\r\n\x05speed\x18\x07 \x01(\x02\x12\r\n\x05\x63limb\x18\x08 \x01(\x02\"6\n\x06Status\x12\x0b\n\x07notSeen\x10\x00\x12\t\n\x05noFix\x10\x01\x12\t\n\x05\x66ix2D\x10\x03\x12\t\n\x05\x66ix3D\x10\x04\x32v\n\nGPSService\x12\x33\n\nGetGPSData\x12\x11.vutura.gps.Empty\x1a\x12.vutura.gps.GPSFix\x12\x33\n\nSetGPSData\x12\x12.vutura.gps.GPSFix\x1a\x11.vutura.gps.Emptyb\x06proto3')
+)
 
 
 
@@ -52,10 +50,34 @@ _GPSFIX_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=459,
-  serialized_end=513,
+  serialized_start=439,
+  serialized_end=493,
 )
 _sym_db.RegisterEnumDescriptor(_GPSFIX_STATUS)
+
+
+_EMPTY = _descriptor.Descriptor(
+  name='Empty',
+  full_name='vutura.gps.Empty',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=30,
+  serialized_end=37,
+)
 
 
 _GPSFIX_UNCERTAINTIES = _descriptor.Descriptor(
@@ -133,8 +155,8 @@ _GPSFIX_UNCERTAINTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=285,
-  serialized_end=457,
+  serialized_start=265,
+  serialized_end=437,
 )
 
 _GPSFIX = _descriptor.Descriptor(
@@ -220,8 +242,8 @@ _GPSFIX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=60,
-  serialized_end=513,
+  serialized_start=40,
+  serialized_end=493,
 )
 
 _GPSFIX_UNCERTAINTIES.fields_by_name['status'].enum_type = _GPSFIX_STATUS
@@ -229,8 +251,16 @@ _GPSFIX_UNCERTAINTIES.containing_type = _GPSFIX
 _GPSFIX.fields_by_name['status'].enum_type = _GPSFIX_STATUS
 _GPSFIX.fields_by_name['uncertainties'].message_type = _GPSFIX_UNCERTAINTIES
 _GPSFIX_STATUS.containing_type = _GPSFIX
+DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['GPSFix'] = _GPSFIX
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
+  DESCRIPTOR = _EMPTY,
+  __module__ = 'gps_data_pb2'
+  # @@protoc_insertion_point(class_scope:vutura.gps.Empty)
+  ))
+_sym_db.RegisterMessage(Empty)
 
 GPSFix = _reflection.GeneratedProtocolMessageType('GPSFix', (_message.Message,), dict(
 
@@ -255,15 +285,15 @@ _GPSSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=516,
-  serialized_end=644,
+  serialized_start=495,
+  serialized_end=613,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetGPSData',
     full_name='vutura.gps.GPSService.GetGPSData',
     index=0,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    input_type=_EMPTY,
     output_type=_GPSFIX,
     serialized_options=None,
   ),
@@ -273,7 +303,7 @@ _GPSSERVICE = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=_GPSFIX,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_EMPTY,
     serialized_options=None,
   ),
 ])

@@ -86,14 +86,17 @@ namespace vutura {
 namespace obstacles {
 
 enum Obstacle_Type {
-  Obstacle_Type_FIRE_FIGHTER = 0,
-  Obstacle_Type_FIRE_TRUCK = 1,
+  Obstacle_Type_UNIDENTIFIED_OBJECT = 0,
+  Obstacle_Type_FIRE_FIGHTER = 1,
+  Obstacle_Type_FIRE_TRUCK = 2,
+  Obstacle_Type_FIRE_UAV = 3,
+  Obstacle_Type_UNIDENTIFIED_UAV = 4,
   Obstacle_Type_Obstacle_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Obstacle_Type_Obstacle_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Obstacle_Type_IsValid(int value);
-const Obstacle_Type Obstacle_Type_Type_MIN = Obstacle_Type_FIRE_FIGHTER;
-const Obstacle_Type Obstacle_Type_Type_MAX = Obstacle_Type_FIRE_TRUCK;
+const Obstacle_Type Obstacle_Type_Type_MIN = Obstacle_Type_UNIDENTIFIED_OBJECT;
+const Obstacle_Type Obstacle_Type_Type_MAX = Obstacle_Type_UNIDENTIFIED_UAV;
 const int Obstacle_Type_Type_ARRAYSIZE = Obstacle_Type_Type_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Obstacle_Type_descriptor();
@@ -575,10 +578,16 @@ class Obstacle final :
   typedef Obstacle_Fence Fence;
 
   typedef Obstacle_Type Type;
+  static const Type UNIDENTIFIED_OBJECT =
+    Obstacle_Type_UNIDENTIFIED_OBJECT;
   static const Type FIRE_FIGHTER =
     Obstacle_Type_FIRE_FIGHTER;
   static const Type FIRE_TRUCK =
     Obstacle_Type_FIRE_TRUCK;
+  static const Type FIRE_UAV =
+    Obstacle_Type_FIRE_UAV;
+  static const Type UNIDENTIFIED_UAV =
+    Obstacle_Type_UNIDENTIFIED_UAV;
   static inline bool Type_IsValid(int value) {
     return Obstacle_Type_IsValid(value);
   }

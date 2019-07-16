@@ -19,6 +19,10 @@
 extern PROTOBUF_INTERNAL_EXPORT_gps_2ddata_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto;
 namespace vutura {
 namespace gps {
+class EmptyDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Empty> _instance;
+} _Empty_default_instance_;
 class GPSFix_UncertaintiesDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<GPSFix_Uncertainties> _instance;
@@ -29,6 +33,20 @@ class GPSFixDefaultTypeInternal {
 } _GPSFix_default_instance_;
 }  // namespace gps
 }  // namespace vutura
+static void InitDefaultsEmpty_gps_2ddata_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vutura::gps::_Empty_default_instance_;
+    new (ptr) ::vutura::gps::Empty();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::vutura::gps::Empty::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Empty_gps_2ddata_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEmpty_gps_2ddata_2eproto}, {}};
+
 static void InitDefaultsGPSFix_Uncertainties_gps_2ddata_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -59,15 +77,21 @@ static void InitDefaultsGPSFix_gps_2ddata_2eproto() {
       &scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto.base,}};
 
 void InitDefaults_gps_2ddata_2eproto() {
+  ::google::protobuf::internal::InitSCC(&scc_info_Empty_gps_2ddata_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_GPSFix_gps_2ddata_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_gps_2ddata_2eproto[2];
+::google::protobuf::Metadata file_level_metadata_gps_2ddata_2eproto[3];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_gps_2ddata_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_gps_2ddata_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_gps_2ddata_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vutura::gps::Empty, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vutura::gps::GPSFix_Uncertainties, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -97,11 +121,13 @@ const ::google::protobuf::uint32 TableStruct_gps_2ddata_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::vutura::gps::GPSFix, uncertainties_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::vutura::gps::GPSFix_Uncertainties)},
-  { 13, -1, sizeof(::vutura::gps::GPSFix)},
+  { 0, -1, sizeof(::vutura::gps::Empty)},
+  { 5, -1, sizeof(::vutura::gps::GPSFix_Uncertainties)},
+  { 18, -1, sizeof(::vutura::gps::GPSFix)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::gps::_Empty_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::gps::_GPSFix_Uncertainties_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::gps::_GPSFix_default_instance_),
 };
@@ -109,40 +135,38 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_gps_2ddata_2eproto = {
   {}, AddDescriptors_gps_2ddata_2eproto, "gps-data.proto", schemas,
   file_default_instances, TableStruct_gps_2ddata_2eproto::offsets,
-  file_level_metadata_gps_2ddata_2eproto, 2, file_level_enum_descriptors_gps_2ddata_2eproto, file_level_service_descriptors_gps_2ddata_2eproto,
+  file_level_metadata_gps_2ddata_2eproto, 3, file_level_enum_descriptors_gps_2ddata_2eproto, file_level_service_descriptors_gps_2ddata_2eproto,
 };
 
 const char descriptor_table_protodef_gps_2ddata_2eproto[] =
-  "\n\016gps-data.proto\022\nvutura.gps\032\033google/pro"
-  "tobuf/empty.proto\"\305\003\n\006GPSFix\022\014\n\004time\030\001 \001"
-  "(\004\022)\n\006status\030\002 \001(\0162\031.vutura.gps.GPSFix.S"
-  "tatus\022\020\n\010latitude\030\003 \001(\002\022\021\n\tlongitude\030\004 \001"
-  "(\002\022\020\n\010altitude\030\005 \001(\002\022\r\n\005track\030\006 \001(\002\022\r\n\005s"
-  "peed\030\007 \001(\002\022\r\n\005climb\030\010 \001(\002\0227\n\runcertainti"
-  "es\030\t \001(\0132 .vutura.gps.GPSFix.Uncertainti"
-  "es\032\254\001\n\rUncertainties\022\014\n\004time\030\001 \001(\004\022)\n\006st"
-  "atus\030\002 \001(\0162\031.vutura.gps.GPSFix.Status\022\020\n"
-  "\010latitude\030\003 \001(\002\022\021\n\tlongitude\030\004 \001(\002\022\020\n\010al"
-  "titude\030\005 \001(\002\022\r\n\005track\030\006 \001(\002\022\r\n\005speed\030\007 \001"
-  "(\002\022\r\n\005climb\030\010 \001(\002\"6\n\006Status\022\013\n\007notSeen\020\000"
-  "\022\t\n\005noFix\020\001\022\t\n\005fix2D\020\003\022\t\n\005fix3D\020\0042\200\001\n\nGP"
-  "SService\0228\n\nGetGPSData\022\026.google.protobuf"
-  ".Empty\032\022.vutura.gps.GPSFix\0228\n\nSetGPSData"
-  "\022\022.vutura.gps.GPSFix\032\026.google.protobuf.E"
-  "mptyb\006proto3"
+  "\n\016gps-data.proto\022\nvutura.gps\"\007\n\005Empty\"\305\003"
+  "\n\006GPSFix\022\014\n\004time\030\001 \001(\004\022)\n\006status\030\002 \001(\0162\031"
+  ".vutura.gps.GPSFix.Status\022\020\n\010latitude\030\003 "
+  "\001(\002\022\021\n\tlongitude\030\004 \001(\002\022\020\n\010altitude\030\005 \001(\002"
+  "\022\r\n\005track\030\006 \001(\002\022\r\n\005speed\030\007 \001(\002\022\r\n\005climb\030"
+  "\010 \001(\002\0227\n\runcertainties\030\t \001(\0132 .vutura.gp"
+  "s.GPSFix.Uncertainties\032\254\001\n\rUncertainties"
+  "\022\014\n\004time\030\001 \001(\004\022)\n\006status\030\002 \001(\0162\031.vutura."
+  "gps.GPSFix.Status\022\020\n\010latitude\030\003 \001(\002\022\021\n\tl"
+  "ongitude\030\004 \001(\002\022\020\n\010altitude\030\005 \001(\002\022\r\n\005trac"
+  "k\030\006 \001(\002\022\r\n\005speed\030\007 \001(\002\022\r\n\005climb\030\010 \001(\002\"6\n"
+  "\006Status\022\013\n\007notSeen\020\000\022\t\n\005noFix\020\001\022\t\n\005fix2D"
+  "\020\003\022\t\n\005fix3D\020\0042v\n\nGPSService\0223\n\nGetGPSDat"
+  "a\022\021.vutura.gps.Empty\032\022.vutura.gps.GPSFix"
+  "\0223\n\nSetGPSData\022\022.vutura.gps.GPSFix\032\021.vut"
+  "ura.gps.Emptyb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_gps_2ddata_2eproto = {
   false, InitDefaults_gps_2ddata_2eproto, 
   descriptor_table_protodef_gps_2ddata_2eproto,
-  "gps-data.proto", &assign_descriptors_table_gps_2ddata_2eproto, 652,
+  "gps-data.proto", &assign_descriptors_table_gps_2ddata_2eproto, 621,
 };
 
 void AddDescriptors_gps_2ddata_2eproto() {
   static constexpr ::google::protobuf::internal::InitFunc deps[1] =
   {
-    ::AddDescriptors_google_2fprotobuf_2fempty_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_gps_2ddata_2eproto, deps, 1);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_gps_2ddata_2eproto, deps, 0);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -174,6 +198,215 @@ const GPSFix_Status GPSFix::Status_MIN;
 const GPSFix_Status GPSFix::Status_MAX;
 const int GPSFix::Status_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+// ===================================================================
+
+void Empty::InitAsDefaultInstance() {
+}
+class Empty::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Empty::Empty()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:vutura.gps.Empty)
+}
+Empty::Empty(const Empty& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:vutura.gps.Empty)
+}
+
+void Empty::SharedCtor() {
+}
+
+Empty::~Empty() {
+  // @@protoc_insertion_point(destructor:vutura.gps.Empty)
+  SharedDtor();
+}
+
+void Empty::SharedDtor() {
+}
+
+void Empty::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Empty& Empty::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_Empty_gps_2ddata_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Empty::Clear() {
+// @@protoc_insertion_point(message_clear_start:vutura.gps.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Empty::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Empty*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool Empty::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:vutura.gps.Empty)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:vutura.gps.Empty)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:vutura.gps.Empty)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void Empty::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:vutura.gps.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:vutura.gps.Empty)
+}
+
+::google::protobuf::uint8* Empty::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vutura.gps.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vutura.gps.Empty)
+  return target;
+}
+
+size_t Empty::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vutura.gps.Empty)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Empty::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vutura.gps.Empty)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Empty* source =
+      ::google::protobuf::DynamicCastToGenerated<Empty>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vutura.gps.Empty)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vutura.gps.Empty)
+    MergeFrom(*source);
+  }
+}
+
+void Empty::MergeFrom(const Empty& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vutura.gps.Empty)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void Empty::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vutura.gps.Empty)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Empty::CopyFrom(const Empty& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vutura.gps.Empty)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Empty::IsInitialized() const {
+  return true;
+}
+
+void Empty::Swap(Empty* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Empty::InternalSwap(Empty* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Empty::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_gps_2ddata_2eproto);
+  return ::file_level_metadata_gps_2ddata_2eproto[kIndexInFileMessages];
+}
+
 
 // ===================================================================
 
@@ -1353,6 +1586,9 @@ void GPSFix::InternalSwap(GPSFix* other) {
 }  // namespace vutura
 namespace google {
 namespace protobuf {
+template<> PROTOBUF_NOINLINE ::vutura::gps::Empty* Arena::CreateMaybeMessage< ::vutura::gps::Empty >(Arena* arena) {
+  return Arena::CreateInternal< ::vutura::gps::Empty >(arena);
+}
 template<> PROTOBUF_NOINLINE ::vutura::gps::GPSFix_Uncertainties* Arena::CreateMaybeMessage< ::vutura::gps::GPSFix_Uncertainties >(Arena* arena) {
   return Arena::CreateInternal< ::vutura::gps::GPSFix_Uncertainties >(arena);
 }

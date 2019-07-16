@@ -224,31 +224,33 @@ const char descriptor_table_protodef_lora_2dobstacles_2eproto[] =
   "\n\024lora-obstacles.proto\022\020vutura.obstacles"
   "\032\033google/protobuf/empty.proto\"=\n\014TagsRes"
   "ponse\022-\n\tobstacles\030\001 \003(\0132\032.vutura.obstac"
-  "les.Obstacle\"\315\002\n\010Obstacle\022\n\n\002ID\030\001 \001(\r\022-\n"
+  "les.Obstacle\"\212\003\n\010Obstacle\022\n\n\002ID\030\001 \001(\r\022-\n"
   "\004type\030\002 \001(\0162\037.vutura.obstacles.Obstacle."
   "Type\0225\n\010position\030\003 \001(\0132#.vutura.obstacle"
   "s.Obstacle.Position\022/\n\005fence\030\004 \001(\0132 .vut"
   "ura.obstacles.Obstacle.Fence\032A\n\010Position"
   "\022\020\n\010latitude\030\001 \001(\002\022\021\n\tlongitude\030\002 \001(\002\022\020\n"
   "\010altitude\030\003 \001(\002\0321\n\005Fence\022\016\n\006radius\030\001 \001(\r"
-  "\022\013\n\003min\030\002 \001(\r\022\013\n\003max\030\003 \001(\r\"(\n\004Type\022\020\n\014FI"
-  "RE_FIGHTER\020\000\022\016\n\nFIRE_TRUCK\020\001\"C\n\020Collisio"
-  "nWarning\022\021\n\ttimestamp\030\001 \001(\004\022\n\n\002ID\030\002 \001(\r\022"
-  "\020\n\010distance\030\003 \001(\002\"L\n\021CollisionWarnings\0227"
-  "\n\013warningList\030\001 \003(\0132\".vutura.obstacles.C"
-  "ollisionWarning2\244\002\n\013TagsService\022A\n\007GetTa"
-  "gs\022\026.google.protobuf.Empty\032\036.vutura.obst"
-  "acles.TagsResponse\022<\n\006SetTag\022\032.vutura.ob"
-  "stacles.Obstacle\032\026.google.protobuf.Empty"
-  "\022J\n\013GetWarnings\022\026.google.protobuf.Empty\032"
-  "#.vutura.obstacles.CollisionWarnings\022H\n\n"
-  "SetWarning\022\".vutura.obstacles.CollisionW"
-  "arning\032\026.google.protobuf.Emptyb\006proto3"
+  "\022\013\n\003min\030\002 \001(\r\022\013\n\003max\030\003 \001(\r\"e\n\004Type\022\027\n\023UN"
+  "IDENTIFIED_OBJECT\020\000\022\020\n\014FIRE_FIGHTER\020\001\022\016\n"
+  "\nFIRE_TRUCK\020\002\022\014\n\010FIRE_UAV\020\003\022\024\n\020UNIDENTIF"
+  "IED_UAV\020\004\"C\n\020CollisionWarning\022\021\n\ttimesta"
+  "mp\030\001 \001(\004\022\n\n\002ID\030\002 \001(\r\022\020\n\010distance\030\003 \001(\002\"L"
+  "\n\021CollisionWarnings\0227\n\013warningList\030\001 \003(\013"
+  "2\".vutura.obstacles.CollisionWarning2\244\002\n"
+  "\013TagsService\022A\n\007GetTags\022\026.google.protobu"
+  "f.Empty\032\036.vutura.obstacles.TagsResponse\022"
+  "<\n\006SetTag\022\032.vutura.obstacles.Obstacle\032\026."
+  "google.protobuf.Empty\022J\n\013GetWarnings\022\026.g"
+  "oogle.protobuf.Empty\032#.vutura.obstacles."
+  "CollisionWarnings\022H\n\nSetWarning\022\".vutura"
+  ".obstacles.CollisionWarning\032\026.google.pro"
+  "tobuf.Emptyb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_lora_2dobstacles_2eproto = {
   false, InitDefaults_lora_2dobstacles_2eproto, 
   descriptor_table_protodef_lora_2dobstacles_2eproto,
-  "lora-obstacles.proto", &assign_descriptors_table_lora_2dobstacles_2eproto, 918,
+  "lora-obstacles.proto", &assign_descriptors_table_lora_2dobstacles_2eproto, 979,
 };
 
 void AddDescriptors_lora_2dobstacles_2eproto() {
@@ -271,6 +273,9 @@ bool Obstacle_Type_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 2:
+    case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -278,8 +283,11 @@ bool Obstacle_Type_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Obstacle_Type Obstacle::UNIDENTIFIED_OBJECT;
 const Obstacle_Type Obstacle::FIRE_FIGHTER;
 const Obstacle_Type Obstacle::FIRE_TRUCK;
+const Obstacle_Type Obstacle::FIRE_UAV;
+const Obstacle_Type Obstacle::UNIDENTIFIED_UAV;
 const Obstacle_Type Obstacle::Type_MIN;
 const Obstacle_Type Obstacle::Type_MAX;
 const int Obstacle::Type_ARRAYSIZE;
