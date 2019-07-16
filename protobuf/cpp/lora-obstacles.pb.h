@@ -32,7 +32,6 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include <google/protobuf/empty.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_lora_2dobstacles_2eproto
@@ -43,7 +42,7 @@ struct TableStruct_lora_2dobstacles_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[6]
+  static const ::google::protobuf::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -58,6 +57,9 @@ extern CollisionWarningDefaultTypeInternal _CollisionWarning_default_instance_;
 class CollisionWarnings;
 class CollisionWarningsDefaultTypeInternal;
 extern CollisionWarningsDefaultTypeInternal _CollisionWarnings_default_instance_;
+class Empty;
+class EmptyDefaultTypeInternal;
+extern EmptyDefaultTypeInternal _Empty_default_instance_;
 class Obstacle;
 class ObstacleDefaultTypeInternal;
 extern ObstacleDefaultTypeInternal _Obstacle_default_instance_;
@@ -76,6 +78,7 @@ namespace google {
 namespace protobuf {
 template<> ::vutura::obstacles::CollisionWarning* Arena::CreateMaybeMessage<::vutura::obstacles::CollisionWarning>(Arena*);
 template<> ::vutura::obstacles::CollisionWarnings* Arena::CreateMaybeMessage<::vutura::obstacles::CollisionWarnings>(Arena*);
+template<> ::vutura::obstacles::Empty* Arena::CreateMaybeMessage<::vutura::obstacles::Empty>(Arena*);
 template<> ::vutura::obstacles::Obstacle* Arena::CreateMaybeMessage<::vutura::obstacles::Obstacle>(Arena*);
 template<> ::vutura::obstacles::Obstacle_Fence* Arena::CreateMaybeMessage<::vutura::obstacles::Obstacle_Fence>(Arena*);
 template<> ::vutura::obstacles::Obstacle_Position* Arena::CreateMaybeMessage<::vutura::obstacles::Obstacle_Position>(Arena*);
@@ -110,6 +113,111 @@ inline bool Obstacle_Type_Parse(
     Obstacle_Type_descriptor(), name, value);
 }
 // ===================================================================
+
+class Empty final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vutura.obstacles.Empty) */ {
+ public:
+  Empty();
+  virtual ~Empty();
+
+  Empty(const Empty& from);
+
+  inline Empty& operator=(const Empty& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Empty(Empty&& from) noexcept
+    : Empty() {
+    *this = ::std::move(from);
+  }
+
+  inline Empty& operator=(Empty&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Empty& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Empty* internal_default_instance() {
+    return reinterpret_cast<const Empty*>(
+               &_Empty_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(Empty* other);
+  friend void swap(Empty& a, Empty& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Empty* New() const final {
+    return CreateMaybeMessage<Empty>(nullptr);
+  }
+
+  Empty* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Empty>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Empty& from);
+  void MergeFrom(const Empty& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Empty* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:vutura.obstacles.Empty)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_lora_2dobstacles_2eproto;
+};
+// -------------------------------------------------------------------
 
 class TagsResponse final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vutura.obstacles.TagsResponse) */ {
@@ -149,7 +257,7 @@ class TagsResponse final :
                &_TagsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(TagsResponse* other);
   friend void swap(TagsResponse& a, TagsResponse& b) {
@@ -267,7 +375,7 @@ class Obstacle_Position final :
                &_Obstacle_Position_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(Obstacle_Position* other);
   friend void swap(Obstacle_Position& a, Obstacle_Position& b) {
@@ -393,7 +501,7 @@ class Obstacle_Fence final :
                &_Obstacle_Fence_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(Obstacle_Fence* other);
   friend void swap(Obstacle_Fence& a, Obstacle_Fence& b) {
@@ -519,7 +627,7 @@ class Obstacle final :
                &_Obstacle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(Obstacle* other);
   friend void swap(Obstacle& a, Obstacle& b) {
@@ -693,7 +801,7 @@ class CollisionWarning final :
                &_CollisionWarning_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(CollisionWarning* other);
   friend void swap(CollisionWarning& a, CollisionWarning& b) {
@@ -819,7 +927,7 @@ class CollisionWarnings final :
                &_CollisionWarnings_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(CollisionWarnings* other);
   friend void swap(CollisionWarnings& a, CollisionWarnings& b) {
@@ -906,6 +1014,10 @@ class CollisionWarnings final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// Empty
+
+// -------------------------------------------------------------------
+
 // TagsResponse
 
 // repeated .vutura.obstacles.Obstacle obstacles = 1;
@@ -1247,6 +1359,8 @@ CollisionWarnings::warninglist() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

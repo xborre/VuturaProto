@@ -2,16 +2,18 @@ syntax = "proto3";
 
 package vutura.obstacles;
 
-import "google/protobuf/empty.proto";
-
 service TagsService {
-    rpc GetTags(google.protobuf.Empty) returns (TagsResponse);
+    rpc GetTags(Empty) returns (TagsResponse);
 
-    rpc SetTag(Obstacle) returns (google.protobuf.Empty);
+    rpc SetTag(Obstacle) returns (Empty);
 
-    rpc GetWarnings(google.protobuf.Empty) returns (CollisionWarnings);
+    rpc GetWarnings(Empty) returns (CollisionWarnings);
 
-    rpc SetWarning(CollisionWarning) returns (google.protobuf.Empty);
+    rpc SetWarning(CollisionWarning) returns (Empty);
+}
+
+message Empty {
+
 }
 
 message TagsResponse {
