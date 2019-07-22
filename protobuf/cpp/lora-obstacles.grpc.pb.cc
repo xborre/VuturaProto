@@ -39,11 +39,11 @@ TagsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channe
   , rpcmethod_SetWarning_(TagsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status TagsService::Stub::GetTags(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::vutura::obstacles::TagsResponse* response) {
+::grpc::Status TagsService::Stub::GetTags(::grpc::ClientContext* context, const ::vutura::obstacles::Empty& request, ::vutura::obstacles::TagsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTags_, context, request, response);
 }
 
-void TagsService::Stub::experimental_async::GetTags(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)> f) {
+void TagsService::Stub::experimental_async::GetTags(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)> f) {
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTags_, context, request, response, std::move(f));
 }
 
@@ -51,39 +51,39 @@ void TagsService::Stub::experimental_async::GetTags(::grpc::ClientContext* conte
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTags_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>* TagsService::Stub::AsyncGetTagsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>* TagsService::Stub::AsyncGetTagsRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Empty& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::obstacles::TagsResponse>::Create(channel_.get(), cq, rpcmethod_GetTags_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>* TagsService::Stub::PrepareAsyncGetTagsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>* TagsService::Stub::PrepareAsyncGetTagsRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Empty& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::obstacles::TagsResponse>::Create(channel_.get(), cq, rpcmethod_GetTags_, context, request, false);
 }
 
-::grpc::Status TagsService::Stub::SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::google::protobuf::Empty* response) {
+::grpc::Status TagsService::Stub::SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::vutura::obstacles::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetTag_, context, request, response);
 }
 
-void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)> f) {
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetTag_, context, request, response, std::move(f));
 }
 
-void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)> f) {
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetTag_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* TagsService::Stub::AsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_SetTag_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::vutura::obstacles::Empty>* TagsService::Stub::AsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::obstacles::Empty>::Create(channel_.get(), cq, rpcmethod_SetTag_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* TagsService::Stub::PrepareAsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_SetTag_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::vutura::obstacles::Empty>* TagsService::Stub::PrepareAsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::obstacles::Empty>::Create(channel_.get(), cq, rpcmethod_SetTag_, context, request, false);
 }
 
-::grpc::Status TagsService::Stub::GetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::vutura::obstacles::CollisionWarnings* response) {
+::grpc::Status TagsService::Stub::GetWarnings(::grpc::ClientContext* context, const ::vutura::obstacles::Empty& request, ::vutura::obstacles::CollisionWarnings* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetWarnings_, context, request, response);
 }
 
-void TagsService::Stub::experimental_async::GetWarnings(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)> f) {
+void TagsService::Stub::experimental_async::GetWarnings(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)> f) {
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWarnings_, context, request, response, std::move(f));
 }
 
@@ -91,82 +91,82 @@ void TagsService::Stub::experimental_async::GetWarnings(::grpc::ClientContext* c
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWarnings_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>* TagsService::Stub::AsyncGetWarningsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>* TagsService::Stub::AsyncGetWarningsRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Empty& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::obstacles::CollisionWarnings>::Create(channel_.get(), cq, rpcmethod_GetWarnings_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>* TagsService::Stub::PrepareAsyncGetWarningsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>* TagsService::Stub::PrepareAsyncGetWarningsRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Empty& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::obstacles::CollisionWarnings>::Create(channel_.get(), cq, rpcmethod_GetWarnings_, context, request, false);
 }
 
-::grpc::Status TagsService::Stub::SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::google::protobuf::Empty* response) {
+::grpc::Status TagsService::Stub::SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::vutura::obstacles::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetWarning_, context, request, response);
 }
 
-void TagsService::Stub::experimental_async::SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void TagsService::Stub::experimental_async::SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)> f) {
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetWarning_, context, request, response, std::move(f));
 }
 
-void TagsService::Stub::experimental_async::SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void TagsService::Stub::experimental_async::SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)> f) {
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetWarning_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* TagsService::Stub::AsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_SetWarning_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::vutura::obstacles::Empty>* TagsService::Stub::AsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::obstacles::Empty>::Create(channel_.get(), cq, rpcmethod_SetWarning_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* TagsService::Stub::PrepareAsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::google::protobuf::Empty>::Create(channel_.get(), cq, rpcmethod_SetWarning_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::vutura::obstacles::Empty>* TagsService::Stub::PrepareAsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vutura::obstacles::Empty>::Create(channel_.get(), cq, rpcmethod_SetWarning_, context, request, false);
 }
 
 TagsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TagsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TagsService::Service, ::google::protobuf::Empty, ::vutura::obstacles::TagsResponse>(
+      new ::grpc::internal::RpcMethodHandler< TagsService::Service, ::vutura::obstacles::Empty, ::vutura::obstacles::TagsResponse>(
           std::mem_fn(&TagsService::Service::GetTags), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TagsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TagsService::Service, ::vutura::obstacles::Obstacle, ::google::protobuf::Empty>(
+      new ::grpc::internal::RpcMethodHandler< TagsService::Service, ::vutura::obstacles::Obstacle, ::vutura::obstacles::Empty>(
           std::mem_fn(&TagsService::Service::SetTag), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TagsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TagsService::Service, ::google::protobuf::Empty, ::vutura::obstacles::CollisionWarnings>(
+      new ::grpc::internal::RpcMethodHandler< TagsService::Service, ::vutura::obstacles::Empty, ::vutura::obstacles::CollisionWarnings>(
           std::mem_fn(&TagsService::Service::GetWarnings), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TagsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TagsService::Service, ::vutura::obstacles::CollisionWarning, ::google::protobuf::Empty>(
+      new ::grpc::internal::RpcMethodHandler< TagsService::Service, ::vutura::obstacles::CollisionWarning, ::vutura::obstacles::Empty>(
           std::mem_fn(&TagsService::Service::SetWarning), this)));
 }
 
 TagsService::Service::~Service() {
 }
 
-::grpc::Status TagsService::Service::GetTags(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::TagsResponse* response) {
+::grpc::Status TagsService::Service::GetTags(::grpc::ServerContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::TagsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TagsService::Service::SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::google::protobuf::Empty* response) {
+::grpc::Status TagsService::Service::SetTag(::grpc::ServerContext* context, const ::vutura::obstacles::Obstacle* request, ::vutura::obstacles::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TagsService::Service::GetWarnings(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vutura::obstacles::CollisionWarnings* response) {
+::grpc::Status TagsService::Service::GetWarnings(::grpc::ServerContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::CollisionWarnings* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TagsService::Service::SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::google::protobuf::Empty* response) {
+::grpc::Status TagsService::Service::SetWarning(::grpc::ServerContext* context, const ::vutura::obstacles::CollisionWarning* request, ::vutura::obstacles::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -22,6 +22,10 @@ extern PROTOBUF_INTERNAL_EXPORT_lora_2dobstacles_2eproto ::google::protobuf::int
 extern PROTOBUF_INTERNAL_EXPORT_lora_2dobstacles_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Obstacle_lora_2dobstacles_2eproto;
 namespace vutura {
 namespace obstacles {
+class EmptyDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Empty> _instance;
+} _Empty_default_instance_;
 class TagsResponseDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TagsResponse> _instance;
@@ -48,6 +52,20 @@ class CollisionWarningsDefaultTypeInternal {
 } _CollisionWarnings_default_instance_;
 }  // namespace obstacles
 }  // namespace vutura
+static void InitDefaultsEmpty_lora_2dobstacles_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vutura::obstacles::_Empty_default_instance_;
+    new (ptr) ::vutura::obstacles::Empty();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::vutura::obstacles::Empty::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Empty_lora_2dobstacles_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEmpty_lora_2dobstacles_2eproto}, {}};
+
 static void InitDefaultsTagsResponse_lora_2dobstacles_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -137,6 +155,7 @@ static void InitDefaultsCollisionWarnings_lora_2dobstacles_2eproto() {
       &scc_info_CollisionWarning_lora_2dobstacles_2eproto.base,}};
 
 void InitDefaults_lora_2dobstacles_2eproto() {
+  ::google::protobuf::internal::InitSCC(&scc_info_Empty_lora_2dobstacles_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TagsResponse_lora_2dobstacles_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Obstacle_Position_lora_2dobstacles_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Obstacle_Fence_lora_2dobstacles_2eproto.base);
@@ -145,11 +164,16 @@ void InitDefaults_lora_2dobstacles_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_CollisionWarnings_lora_2dobstacles_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_lora_2dobstacles_2eproto[6];
+::google::protobuf::Metadata file_level_metadata_lora_2dobstacles_2eproto[7];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_lora_2dobstacles_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_lora_2dobstacles_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_lora_2dobstacles_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vutura::obstacles::Empty, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vutura::obstacles::TagsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -197,15 +221,17 @@ const ::google::protobuf::uint32 TableStruct_lora_2dobstacles_2eproto::offsets[]
   PROTOBUF_FIELD_OFFSET(::vutura::obstacles::CollisionWarnings, warninglist_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::vutura::obstacles::TagsResponse)},
-  { 6, -1, sizeof(::vutura::obstacles::Obstacle_Position)},
-  { 14, -1, sizeof(::vutura::obstacles::Obstacle_Fence)},
-  { 22, -1, sizeof(::vutura::obstacles::Obstacle)},
-  { 31, -1, sizeof(::vutura::obstacles::CollisionWarning)},
-  { 39, -1, sizeof(::vutura::obstacles::CollisionWarnings)},
+  { 0, -1, sizeof(::vutura::obstacles::Empty)},
+  { 5, -1, sizeof(::vutura::obstacles::TagsResponse)},
+  { 11, -1, sizeof(::vutura::obstacles::Obstacle_Position)},
+  { 19, -1, sizeof(::vutura::obstacles::Obstacle_Fence)},
+  { 27, -1, sizeof(::vutura::obstacles::Obstacle)},
+  { 36, -1, sizeof(::vutura::obstacles::CollisionWarning)},
+  { 44, -1, sizeof(::vutura::obstacles::CollisionWarnings)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::obstacles::_Empty_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::obstacles::_TagsResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::obstacles::_Obstacle_Position_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::obstacles::_Obstacle_Fence_default_instance_),
@@ -217,48 +243,47 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_lora_2dobstacles_2eproto = {
   {}, AddDescriptors_lora_2dobstacles_2eproto, "lora-obstacles.proto", schemas,
   file_default_instances, TableStruct_lora_2dobstacles_2eproto::offsets,
-  file_level_metadata_lora_2dobstacles_2eproto, 6, file_level_enum_descriptors_lora_2dobstacles_2eproto, file_level_service_descriptors_lora_2dobstacles_2eproto,
+  file_level_metadata_lora_2dobstacles_2eproto, 7, file_level_enum_descriptors_lora_2dobstacles_2eproto, file_level_service_descriptors_lora_2dobstacles_2eproto,
 };
 
 const char descriptor_table_protodef_lora_2dobstacles_2eproto[] =
   "\n\024lora-obstacles.proto\022\020vutura.obstacles"
-  "\032\033google/protobuf/empty.proto\"=\n\014TagsRes"
-  "ponse\022-\n\tobstacles\030\001 \003(\0132\032.vutura.obstac"
-  "les.Obstacle\"\212\003\n\010Obstacle\022\n\n\002ID\030\001 \001(\r\022-\n"
-  "\004type\030\002 \001(\0162\037.vutura.obstacles.Obstacle."
-  "Type\0225\n\010position\030\003 \001(\0132#.vutura.obstacle"
-  "s.Obstacle.Position\022/\n\005fence\030\004 \001(\0132 .vut"
-  "ura.obstacles.Obstacle.Fence\032A\n\010Position"
-  "\022\020\n\010latitude\030\001 \001(\002\022\021\n\tlongitude\030\002 \001(\002\022\020\n"
-  "\010altitude\030\003 \001(\002\0321\n\005Fence\022\016\n\006radius\030\001 \001(\r"
-  "\022\013\n\003min\030\002 \001(\r\022\013\n\003max\030\003 \001(\r\"e\n\004Type\022\027\n\023UN"
-  "IDENTIFIED_OBJECT\020\000\022\020\n\014FIRE_FIGHTER\020\001\022\016\n"
-  "\nFIRE_TRUCK\020\002\022\014\n\010FIRE_UAV\020\003\022\024\n\020UNIDENTIF"
-  "IED_UAV\020\004\"C\n\020CollisionWarning\022\021\n\ttimesta"
-  "mp\030\001 \001(\004\022\n\n\002ID\030\002 \001(\r\022\020\n\010distance\030\003 \001(\002\"L"
-  "\n\021CollisionWarnings\0227\n\013warningList\030\001 \003(\013"
-  "2\".vutura.obstacles.CollisionWarning2\244\002\n"
-  "\013TagsService\022A\n\007GetTags\022\026.google.protobu"
-  "f.Empty\032\036.vutura.obstacles.TagsResponse\022"
-  "<\n\006SetTag\022\032.vutura.obstacles.Obstacle\032\026."
-  "google.protobuf.Empty\022J\n\013GetWarnings\022\026.g"
-  "oogle.protobuf.Empty\032#.vutura.obstacles."
-  "CollisionWarnings\022H\n\nSetWarning\022\".vutura"
-  ".obstacles.CollisionWarning\032\026.google.pro"
-  "tobuf.Emptyb\006proto3"
+  "\"\007\n\005Empty\"=\n\014TagsResponse\022-\n\tobstacles\030\001"
+  " \003(\0132\032.vutura.obstacles.Obstacle\"\212\003\n\010Obs"
+  "tacle\022\n\n\002ID\030\001 \001(\r\022-\n\004type\030\002 \001(\0162\037.vutura"
+  ".obstacles.Obstacle.Type\0225\n\010position\030\003 \001"
+  "(\0132#.vutura.obstacles.Obstacle.Position\022"
+  "/\n\005fence\030\004 \001(\0132 .vutura.obstacles.Obstac"
+  "le.Fence\032A\n\010Position\022\020\n\010latitude\030\001 \001(\002\022\021"
+  "\n\tlongitude\030\002 \001(\002\022\020\n\010altitude\030\003 \001(\002\0321\n\005F"
+  "ence\022\016\n\006radius\030\001 \001(\r\022\013\n\003min\030\002 \001(\r\022\013\n\003max"
+  "\030\003 \001(\r\"e\n\004Type\022\027\n\023UNIDENTIFIED_OBJECT\020\000\022"
+  "\020\n\014FIRE_FIGHTER\020\001\022\016\n\nFIRE_TRUCK\020\002\022\014\n\010FIR"
+  "E_UAV\020\003\022\024\n\020UNIDENTIFIED_UAV\020\004\"C\n\020Collisi"
+  "onWarning\022\021\n\ttimestamp\030\001 \001(\004\022\n\n\002ID\030\002 \001(\r"
+  "\022\020\n\010distance\030\003 \001(\002\"L\n\021CollisionWarnings\022"
+  "7\n\013warningList\030\001 \003(\0132\".vutura.obstacles."
+  "CollisionWarning2\250\002\n\013TagsService\022B\n\007GetT"
+  "ags\022\027.vutura.obstacles.Empty\032\036.vutura.ob"
+  "stacles.TagsResponse\022=\n\006SetTag\022\032.vutura."
+  "obstacles.Obstacle\032\027.vutura.obstacles.Em"
+  "pty\022K\n\013GetWarnings\022\027.vutura.obstacles.Em"
+  "pty\032#.vutura.obstacles.CollisionWarnings"
+  "\022I\n\nSetWarning\022\".vutura.obstacles.Collis"
+  "ionWarning\032\027.vutura.obstacles.Emptyb\006pro"
+  "to3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_lora_2dobstacles_2eproto = {
   false, InitDefaults_lora_2dobstacles_2eproto, 
   descriptor_table_protodef_lora_2dobstacles_2eproto,
-  "lora-obstacles.proto", &assign_descriptors_table_lora_2dobstacles_2eproto, 979,
+  "lora-obstacles.proto", &assign_descriptors_table_lora_2dobstacles_2eproto, 963,
 };
 
 void AddDescriptors_lora_2dobstacles_2eproto() {
   static constexpr ::google::protobuf::internal::InitFunc deps[1] =
   {
-    ::AddDescriptors_google_2fprotobuf_2fempty_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_lora_2dobstacles_2eproto, deps, 1);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_lora_2dobstacles_2eproto, deps, 0);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -292,6 +317,215 @@ const Obstacle_Type Obstacle::Type_MIN;
 const Obstacle_Type Obstacle::Type_MAX;
 const int Obstacle::Type_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+// ===================================================================
+
+void Empty::InitAsDefaultInstance() {
+}
+class Empty::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Empty::Empty()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:vutura.obstacles.Empty)
+}
+Empty::Empty(const Empty& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:vutura.obstacles.Empty)
+}
+
+void Empty::SharedCtor() {
+}
+
+Empty::~Empty() {
+  // @@protoc_insertion_point(destructor:vutura.obstacles.Empty)
+  SharedDtor();
+}
+
+void Empty::SharedDtor() {
+}
+
+void Empty::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Empty& Empty::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_Empty_lora_2dobstacles_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Empty::Clear() {
+// @@protoc_insertion_point(message_clear_start:vutura.obstacles.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Empty::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Empty*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool Empty::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:vutura.obstacles.Empty)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:vutura.obstacles.Empty)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:vutura.obstacles.Empty)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void Empty::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:vutura.obstacles.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:vutura.obstacles.Empty)
+}
+
+::google::protobuf::uint8* Empty::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vutura.obstacles.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vutura.obstacles.Empty)
+  return target;
+}
+
+size_t Empty::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vutura.obstacles.Empty)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Empty::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vutura.obstacles.Empty)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Empty* source =
+      ::google::protobuf::DynamicCastToGenerated<Empty>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vutura.obstacles.Empty)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vutura.obstacles.Empty)
+    MergeFrom(*source);
+  }
+}
+
+void Empty::MergeFrom(const Empty& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vutura.obstacles.Empty)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void Empty::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vutura.obstacles.Empty)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Empty::CopyFrom(const Empty& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vutura.obstacles.Empty)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Empty::IsInitialized() const {
+  return true;
+}
+
+void Empty::Swap(Empty* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Empty::InternalSwap(Empty* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Empty::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_lora_2dobstacles_2eproto);
+  return ::file_level_metadata_lora_2dobstacles_2eproto[kIndexInFileMessages];
+}
+
 
 // ===================================================================
 
@@ -2348,6 +2582,9 @@ void CollisionWarnings::InternalSwap(CollisionWarnings* other) {
 }  // namespace vutura
 namespace google {
 namespace protobuf {
+template<> PROTOBUF_NOINLINE ::vutura::obstacles::Empty* Arena::CreateMaybeMessage< ::vutura::obstacles::Empty >(Arena* arena) {
+  return Arena::CreateInternal< ::vutura::obstacles::Empty >(arena);
+}
 template<> PROTOBUF_NOINLINE ::vutura::obstacles::TagsResponse* Arena::CreateMaybeMessage< ::vutura::obstacles::TagsResponse >(Arena* arena) {
   return Arena::CreateInternal< ::vutura::obstacles::TagsResponse >(arena);
 }

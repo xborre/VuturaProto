@@ -13,7 +13,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='vutura.obstacles',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x14lora-obstacles.proto\x12\x10vutura.obstacles\x1a\x1bgoogle/protobuf/empty.proto\"=\n\x0cTagsResponse\x12-\n\tobstacles\x18\x01 \x03(\x0b\x32\x1a.vutura.obstacles.Obstacle\"\x8a\x03\n\x08Obstacle\x12\n\n\x02ID\x18\x01 \x01(\r\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x1f.vutura.obstacles.Obstacle.Type\x12\x35\n\x08position\x18\x03 \x01(\x0b\x32#.vutura.obstacles.Obstacle.Position\x12/\n\x05\x66\x65nce\x18\x04 \x01(\x0b\x32 .vutura.obstacles.Obstacle.Fence\x1a\x41\n\x08Position\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x03 \x01(\x02\x1a\x31\n\x05\x46\x65nce\x12\x0e\n\x06radius\x18\x01 \x01(\r\x12\x0b\n\x03min\x18\x02 \x01(\r\x12\x0b\n\x03max\x18\x03 \x01(\r\"e\n\x04Type\x12\x17\n\x13UNIDENTIFIED_OBJECT\x10\x00\x12\x10\n\x0c\x46IRE_FIGHTER\x10\x01\x12\x0e\n\nFIRE_TRUCK\x10\x02\x12\x0c\n\x08\x46IRE_UAV\x10\x03\x12\x14\n\x10UNIDENTIFIED_UAV\x10\x04\"C\n\x10\x43ollisionWarning\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12\n\n\x02ID\x18\x02 \x01(\r\x12\x10\n\x08\x64istance\x18\x03 \x01(\x02\"L\n\x11\x43ollisionWarnings\x12\x37\n\x0bwarningList\x18\x01 \x03(\x0b\x32\".vutura.obstacles.CollisionWarning2\xa4\x02\n\x0bTagsService\x12\x41\n\x07GetTags\x12\x16.google.protobuf.Empty\x1a\x1e.vutura.obstacles.TagsResponse\x12<\n\x06SetTag\x12\x1a.vutura.obstacles.Obstacle\x1a\x16.google.protobuf.Empty\x12J\n\x0bGetWarnings\x12\x16.google.protobuf.Empty\x1a#.vutura.obstacles.CollisionWarnings\x12H\n\nSetWarning\x12\".vutura.obstacles.CollisionWarning\x1a\x16.google.protobuf.Emptyb\x06proto3')
-  ,
-  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\x14lora-obstacles.proto\x12\x10vutura.obstacles\"\x07\n\x05\x45mpty\"=\n\x0cTagsResponse\x12-\n\tobstacles\x18\x01 \x03(\x0b\x32\x1a.vutura.obstacles.Obstacle\"\x8a\x03\n\x08Obstacle\x12\n\n\x02ID\x18\x01 \x01(\r\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x1f.vutura.obstacles.Obstacle.Type\x12\x35\n\x08position\x18\x03 \x01(\x0b\x32#.vutura.obstacles.Obstacle.Position\x12/\n\x05\x66\x65nce\x18\x04 \x01(\x0b\x32 .vutura.obstacles.Obstacle.Fence\x1a\x41\n\x08Position\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x03 \x01(\x02\x1a\x31\n\x05\x46\x65nce\x12\x0e\n\x06radius\x18\x01 \x01(\r\x12\x0b\n\x03min\x18\x02 \x01(\r\x12\x0b\n\x03max\x18\x03 \x01(\r\"e\n\x04Type\x12\x17\n\x13UNIDENTIFIED_OBJECT\x10\x00\x12\x10\n\x0c\x46IRE_FIGHTER\x10\x01\x12\x0e\n\nFIRE_TRUCK\x10\x02\x12\x0c\n\x08\x46IRE_UAV\x10\x03\x12\x14\n\x10UNIDENTIFIED_UAV\x10\x04\"C\n\x10\x43ollisionWarning\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12\n\n\x02ID\x18\x02 \x01(\r\x12\x10\n\x08\x64istance\x18\x03 \x01(\x02\"L\n\x11\x43ollisionWarnings\x12\x37\n\x0bwarningList\x18\x01 \x03(\x0b\x32\".vutura.obstacles.CollisionWarning2\xa8\x02\n\x0bTagsService\x12\x42\n\x07GetTags\x12\x17.vutura.obstacles.Empty\x1a\x1e.vutura.obstacles.TagsResponse\x12=\n\x06SetTag\x12\x1a.vutura.obstacles.Obstacle\x1a\x17.vutura.obstacles.Empty\x12K\n\x0bGetWarnings\x12\x17.vutura.obstacles.Empty\x1a#.vutura.obstacles.CollisionWarnings\x12I\n\nSetWarning\x12\".vutura.obstacles.CollisionWarning\x1a\x17.vutura.obstacles.Emptyb\x06proto3')
+)
 
 
 
@@ -56,10 +54,34 @@ _OBSTACLE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=428,
-  serialized_end=529,
+  serialized_start=408,
+  serialized_end=509,
 )
 _sym_db.RegisterEnumDescriptor(_OBSTACLE_TYPE)
+
+
+_EMPTY = _descriptor.Descriptor(
+  name='Empty',
+  full_name='vutura.obstacles.Empty',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=42,
+  serialized_end=49,
+)
 
 
 _TAGSRESPONSE = _descriptor.Descriptor(
@@ -88,8 +110,8 @@ _TAGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=71,
-  serialized_end=132,
+  serialized_start=51,
+  serialized_end=112,
 )
 
 
@@ -133,8 +155,8 @@ _OBSTACLE_POSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=310,
-  serialized_end=375,
+  serialized_start=290,
+  serialized_end=355,
 )
 
 _OBSTACLE_FENCE = _descriptor.Descriptor(
@@ -177,8 +199,8 @@ _OBSTACLE_FENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=377,
-  serialized_end=426,
+  serialized_start=357,
+  serialized_end=406,
 )
 
 _OBSTACLE = _descriptor.Descriptor(
@@ -229,8 +251,8 @@ _OBSTACLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=135,
-  serialized_end=529,
+  serialized_start=115,
+  serialized_end=509,
 )
 
 
@@ -274,8 +296,8 @@ _COLLISIONWARNING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=531,
-  serialized_end=598,
+  serialized_start=511,
+  serialized_end=578,
 )
 
 
@@ -305,8 +327,8 @@ _COLLISIONWARNINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=600,
-  serialized_end=676,
+  serialized_start=580,
+  serialized_end=656,
 )
 
 _TAGSRESPONSE.fields_by_name['obstacles'].message_type = _OBSTACLE
@@ -317,11 +339,19 @@ _OBSTACLE.fields_by_name['position'].message_type = _OBSTACLE_POSITION
 _OBSTACLE.fields_by_name['fence'].message_type = _OBSTACLE_FENCE
 _OBSTACLE_TYPE.containing_type = _OBSTACLE
 _COLLISIONWARNINGS.fields_by_name['warningList'].message_type = _COLLISIONWARNING
+DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['TagsResponse'] = _TAGSRESPONSE
 DESCRIPTOR.message_types_by_name['Obstacle'] = _OBSTACLE
 DESCRIPTOR.message_types_by_name['CollisionWarning'] = _COLLISIONWARNING
 DESCRIPTOR.message_types_by_name['CollisionWarnings'] = _COLLISIONWARNINGS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
+  DESCRIPTOR = _EMPTY,
+  __module__ = 'lora_obstacles_pb2'
+  # @@protoc_insertion_point(class_scope:vutura.obstacles.Empty)
+  ))
+_sym_db.RegisterMessage(Empty)
 
 TagsResponse = _reflection.GeneratedProtocolMessageType('TagsResponse', (_message.Message,), dict(
   DESCRIPTOR = _TAGSRESPONSE,
@@ -375,15 +405,15 @@ _TAGSSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=679,
-  serialized_end=971,
+  serialized_start=659,
+  serialized_end=955,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetTags',
     full_name='vutura.obstacles.TagsService.GetTags',
     index=0,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    input_type=_EMPTY,
     output_type=_TAGSRESPONSE,
     serialized_options=None,
   ),
@@ -393,7 +423,7 @@ _TAGSSERVICE = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=_OBSTACLE,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_EMPTY,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -401,7 +431,7 @@ _TAGSSERVICE = _descriptor.ServiceDescriptor(
     full_name='vutura.obstacles.TagsService.GetWarnings',
     index=2,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    input_type=_EMPTY,
     output_type=_COLLISIONWARNINGS,
     serialized_options=None,
   ),
@@ -411,7 +441,7 @@ _TAGSSERVICE = _descriptor.ServiceDescriptor(
     index=3,
     containing_service=None,
     input_type=_COLLISIONWARNING,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_EMPTY,
     serialized_options=None,
   ),
 ])
