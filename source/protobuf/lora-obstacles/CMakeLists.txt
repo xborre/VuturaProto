@@ -5,7 +5,9 @@ file(MAKE_DIRECTORY ${LORA_OBSTACLES_OUTPUT_DIR})
 
 set(LORA_OBSTACLES_GRPC_SOURCES
         ${LORA_OBSTACLES_OUTPUT_DIR}/lora-obstacles.pb.h
-        ${LORA_OBSTACLES_OUTPUT_DIR}/lora-obstacles.pb.cc)
+        ${LORA_OBSTACLES_OUTPUT_DIR}/lora-obstacles.pb.cc
+        ${LORA_OBSTACLES_OUTPUT_DIR}/lora-obstacles.grpc.pb.h
+        ${LORA_OBSTACLES_OUTPUT_DIR}/lora-obstacles.grpc.pb.cc)
 
 add_custom_command(
         OUTPUT ${LORA_OBSTACLES_GRPC_SOURCES}
