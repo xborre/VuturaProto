@@ -1,39 +1,39 @@
-set(TARGET_NAME gps_data_proto)
-set(PROTO_NAME gps-data)
+set(GPS_DATA_SERVICE_PROTOS ${CMAKE_CURRENT_SOURCE_DIR}/gps-data.proto)
+set(GPS_DATA_OUTPUT_DIR ${OUTPUT_DIR}/vutura/interfaces/gps-data)
 
-get_filename_component(_PROTO ${PROTO_NAME}.proto ABSOLUTE)
-get_filename_component(_PROTO_PATH ${_PROTO} PATH)
+file(MAKE_DIRECTORY ${GPS_DATA_OUTPUT_DIR})
 
-set(_PROTO_SOURCES ${CMAKE_CURRENT_BINARY_DIR}/${PROTO_NAME}.pb.cc)
-set(_PROTO_HEADERS ${CMAKE_CURRENT_BINARY_DIR}/${PROTO_NAME}.pb.h)
-set(_GRPC_SOURCES ${CMAKE_CURRENT_BINARY_DIR}/${PROTO_NAME}.grpc.pb.cc)
-set(_GRPC_HEADERS ${CMAKE_CURRENT_BINARY_DIR}/${PROTO_NAME}.grpc.pb.h)
-
+set(GPS_DATA_GRPC_SOURCES
+        ${GPS_DATA_OUTPUT_DIR}/gps-data.pb.h
+        ${GPS_DATA_OUTPUT_DIR}/gps-data.pb.cc)
 
 add_custom_command(
-        OUTPUT "${_PROTO_SOURCES}" "${_PROTO_HEADERS}" "${_GRPC_SOURCES}" "${_GRPC_HEADERS}"
-        COMMAND $<TARGET_FILE:protoc>
-        ARGS --grpc_out "${CMAKE_CURRENT_BINARY_DIR}"
-        --cpp_out "${CMAKE_CURRENT_BINARY_DIR}"
-        -I "${_PROTO_PATH}"
-        --plugin=protoc-gen-grpc="$<TARGET_FILE:grpc_cpp_plugin>"
-        "${_PROTO}"
-        DEPENDS "${_PROTO}")
+        OUTPUT ${GPS_DATA_GRPC_SOURCES}
 
-add_library(${TARGET_NAME} OBJECT)
-target_sources(${TARGET_NAME}
-        PRIVATE
-            ${_PROTO_SOURCES}
-            ${_GRPC_SOURCES}
-        PUBLIC
-            ${_PROTO_HEADERS}
-            ${_GRPC_HEADERS})
-target_include_directories(${TARGET_NAME}
-        PUBLIC
-            ${CMAKE_CURRENT_BINARY_DIR})
-target_link_libraries(${TARGET_NAME}
-        PUBLIC
-            grpc++_unsecure
-            libprotobuf)
+        COMMAND $<TARGET_FILE:protobuf::protoc>
+        --cpp_out ${GPS_DATA_OUTPUT_DIR}
+        --proto_path ${CMAKE_CURRENT_SOURCE_DIR}
+        ${GPS_DATA_SERVICE_PROTOS}
 
+        COMMAND $<TARGET_FILE:protobuf::protoc>
+        --grpc_out ${GPS_DATA_OUTPUT_DIR}
+        --proto_path ${CMAKE_CURRENT_SOURCE_DIR}
+        --plugin=protoc-gen-grpc=$<TARGET_FILE:gRPC::grpc_cpp_plugin>
+        ${GPS_DATA_SERVICE_PROTOS}
+
+        DEPENDS $<TARGET_FILE:protobuf::protoc> $<TARGET_FILE:gRPC::grpc_cpp_plugin>
+        COMMENT "Generating C++ code for GPS-DATA services..."
+        VERBATIM
+)
+
+set_source_files_properties(${GPS_DATA_GRPC_SOURCES} PROPERTIES GENERATED TRUE)
+
+# Target library
+set(TARGET_NAME gps-data)
+add_library(${TARGET_NAME} STATIC ${GPS_DATA_GRPC_SOURCES})
 add_library(VuturaProto::${TARGET_NAME} ALIAS ${TARGET_NAME})
+target_compile_options(${TARGET_NAME}
+        PUBLIC -Wno-invalid-offsetof -Wno-unused-parameter -fPIC)
+target_include_directories(${TARGET_NAME}
+        PUBLIC ${GPS_DATA_OUTPUT_DIR})
+target_link_libraries(${TARGET_NAME} PRIVATE gRPC::grpc++)
