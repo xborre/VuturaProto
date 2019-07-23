@@ -5,6 +5,8 @@ cmake_minimum_required(VERSION 3.13)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+option(BUILD_TESTS OFF)
+
 project(VuturaProto VERSION 0.0.1)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -22,4 +24,6 @@ message(STATUS "Using gRPC ${gRPC_VERSION}")
 #-----------------------------------------------------------------------------------------------------------------------
 # Subdirectories
 add_subdirectory(source)
-add_subdirectory(test)
+if (BUILD_TESTS)
+    add_subdirectory(test)
+endif ()

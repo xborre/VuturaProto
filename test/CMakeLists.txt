@@ -4,4 +4,5 @@ target_sources(vutura_proto_test
             test.cpp)
 target_link_libraries(vutura_proto_test
         PRIVATE
-            VuturaProto::gps-data)
+            VuturaProto::gps-data
+            VuturaProto::lora-obstacles)
