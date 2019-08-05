@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package vutura.obstacles;
 
-option go_package = "github.com/xborre/VuturaProto/go/vutura";
+option go_package = "github.com/xborre/VuturaProto/go/vutura/obstacles";
 
 service TagsService {
     rpc GetTags(Empty) returns (TagsResponse);
