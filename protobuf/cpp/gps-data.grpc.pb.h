@@ -20,11 +20,17 @@
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 
-namespace grpc {
+namespace grpc_impl {
 class CompletionQueue;
-class Channel;
 class ServerCompletionQueue;
 class ServerContext;
+}  // namespace grpc_impl
+
+namespace grpc {
+namespace experimental {
+template <typename RequestT, typename ResponseT>
+class MessageAllocator;
+}  // namespace experimental
 }  // namespace grpc
 
 namespace vutura {
@@ -59,8 +65,12 @@ class GPSService final {
       virtual ~experimental_async_interface() {}
       virtual void GetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::GPSFix* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -91,8 +101,12 @@ class GPSService final {
      public:
       void GetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) override;
       void GetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::GPSFix* response, std::function<void(::grpc::Status)>) override;
+      void GetGPSData(::grpc::ClientContext* context, const ::vutura::gps::Empty* request, ::vutura::gps::GPSFix* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::GPSFix* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response, std::function<void(::grpc::Status)>) override;
       void SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::Empty* response, std::function<void(::grpc::Status)>) override;
+      void SetGPSData(::grpc::ClientContext* context, const ::vutura::gps::GPSFix* request, ::vutura::gps::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void SetGPSData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::gps::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -176,6 +190,12 @@ class GPSService final {
                    return this->GetGPSData(context, request, response, controller);
                  }));
     }
+    void SetMessageAllocatorFor_GetGPSData(
+        ::grpc::experimental::MessageAllocator< ::vutura::gps::Empty, ::vutura::gps::GPSFix>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vutura::gps::Empty, ::vutura::gps::GPSFix>*>(
+          ::grpc::Service::experimental().GetHandler(0))
+              ->SetMessageAllocator(allocator);
+    }
     ~ExperimentalWithCallbackMethod_GetGPSData() override {
       BaseClassMustBeDerivedFromService(this);
     }
@@ -200,6 +220,12 @@ class GPSService final {
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->SetGPSData(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_SetGPSData(
+        ::grpc::experimental::MessageAllocator< ::vutura::gps::GPSFix, ::vutura::gps::Empty>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vutura::gps::GPSFix, ::vutura::gps::Empty>*>(
+          ::grpc::Service::experimental().GetHandler(1))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_SetGPSData() override {
       BaseClassMustBeDerivedFromService(this);
