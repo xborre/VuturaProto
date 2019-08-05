@@ -20,11 +20,17 @@
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 
-namespace grpc {
+namespace grpc_impl {
 class CompletionQueue;
-class Channel;
 class ServerCompletionQueue;
 class ServerContext;
+}  // namespace grpc_impl
+
+namespace grpc {
+namespace experimental {
+template <typename RequestT, typename ResponseT>
+class MessageAllocator;
+}  // namespace experimental
 }  // namespace grpc
 
 namespace vutura {
@@ -71,12 +77,20 @@ class TagsService final {
       virtual ~experimental_async_interface() {}
       virtual void GetTags(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTags(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::TagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::TagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void GetWarnings(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetWarnings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetWarnings(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::CollisionWarnings* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetWarnings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::CollisionWarnings* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -125,12 +139,20 @@ class TagsService final {
      public:
       void GetTags(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTags(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::TagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::TagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)>) override;
       void SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)>) override;
+      void SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void GetWarnings(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)>) override;
       void GetWarnings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)>) override;
+      void GetWarnings(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::CollisionWarnings* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetWarnings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::CollisionWarnings* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)>) override;
       void SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)>) override;
+      void SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -262,6 +284,12 @@ class TagsService final {
                    return this->GetTags(context, request, response, controller);
                  }));
     }
+    void SetMessageAllocatorFor_GetTags(
+        ::grpc::experimental::MessageAllocator< ::vutura::obstacles::Empty, ::vutura::obstacles::TagsResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vutura::obstacles::Empty, ::vutura::obstacles::TagsResponse>*>(
+          ::grpc::Service::experimental().GetHandler(0))
+              ->SetMessageAllocator(allocator);
+    }
     ~ExperimentalWithCallbackMethod_GetTags() override {
       BaseClassMustBeDerivedFromService(this);
     }
@@ -286,6 +314,12 @@ class TagsService final {
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->SetTag(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_SetTag(
+        ::grpc::experimental::MessageAllocator< ::vutura::obstacles::Obstacle, ::vutura::obstacles::Empty>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vutura::obstacles::Obstacle, ::vutura::obstacles::Empty>*>(
+          ::grpc::Service::experimental().GetHandler(1))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_SetTag() override {
       BaseClassMustBeDerivedFromService(this);
@@ -312,6 +346,12 @@ class TagsService final {
                    return this->GetWarnings(context, request, response, controller);
                  }));
     }
+    void SetMessageAllocatorFor_GetWarnings(
+        ::grpc::experimental::MessageAllocator< ::vutura::obstacles::Empty, ::vutura::obstacles::CollisionWarnings>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vutura::obstacles::Empty, ::vutura::obstacles::CollisionWarnings>*>(
+          ::grpc::Service::experimental().GetHandler(2))
+              ->SetMessageAllocator(allocator);
+    }
     ~ExperimentalWithCallbackMethod_GetWarnings() override {
       BaseClassMustBeDerivedFromService(this);
     }
@@ -336,6 +376,12 @@ class TagsService final {
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->SetWarning(context, request, response, controller);
                  }));
+    }
+    void SetMessageAllocatorFor_SetWarning(
+        ::grpc::experimental::MessageAllocator< ::vutura::obstacles::CollisionWarning, ::vutura::obstacles::Empty>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vutura::obstacles::CollisionWarning, ::vutura::obstacles::Empty>*>(
+          ::grpc::Service::experimental().GetHandler(3))
+              ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_SetWarning() override {
       BaseClassMustBeDerivedFromService(this);

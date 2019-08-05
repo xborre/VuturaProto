@@ -8,85 +8,78 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-
-extern PROTOBUF_INTERNAL_EXPORT_gps_2ddata_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_gps_2ddata_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto;
 namespace vutura {
 namespace gps {
 class EmptyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Empty> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Empty> _instance;
 } _Empty_default_instance_;
 class GPSFix_UncertaintiesDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<GPSFix_Uncertainties> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GPSFix_Uncertainties> _instance;
 } _GPSFix_Uncertainties_default_instance_;
 class GPSFixDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<GPSFix> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GPSFix> _instance;
 } _GPSFix_default_instance_;
 }  // namespace gps
 }  // namespace vutura
-static void InitDefaultsEmpty_gps_2ddata_2eproto() {
+static void InitDefaultsscc_info_Empty_gps_2ddata_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::vutura::gps::_Empty_default_instance_;
     new (ptr) ::vutura::gps::Empty();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::vutura::gps::Empty::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Empty_gps_2ddata_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEmpty_gps_2ddata_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Empty_gps_2ddata_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_Empty_gps_2ddata_2eproto}, {}};
 
-static void InitDefaultsGPSFix_Uncertainties_gps_2ddata_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vutura::gps::_GPSFix_Uncertainties_default_instance_;
-    new (ptr) ::vutura::gps::GPSFix_Uncertainties();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::vutura::gps::GPSFix_Uncertainties::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGPSFix_Uncertainties_gps_2ddata_2eproto}, {}};
-
-static void InitDefaultsGPSFix_gps_2ddata_2eproto() {
+static void InitDefaultsscc_info_GPSFix_gps_2ddata_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::vutura::gps::_GPSFix_default_instance_;
     new (ptr) ::vutura::gps::GPSFix();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::vutura::gps::GPSFix::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_GPSFix_gps_2ddata_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGPSFix_gps_2ddata_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GPSFix_gps_2ddata_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_GPSFix_gps_2ddata_2eproto}, {
       &scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto.base,}};
 
-void InitDefaults_gps_2ddata_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Empty_gps_2ddata_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_GPSFix_gps_2ddata_2eproto.base);
+static void InitDefaultsscc_info_GPSFix_Uncertainties_gps_2ddata_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vutura::gps::_GPSFix_Uncertainties_default_instance_;
+    new (ptr) ::vutura::gps::GPSFix_Uncertainties();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::vutura::gps::GPSFix_Uncertainties::InitAsDefaultInstance();
 }
 
-::google::protobuf::Metadata file_level_metadata_gps_2ddata_2eproto[3];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_gps_2ddata_2eproto[1];
-constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_gps_2ddata_2eproto = nullptr;
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_GPSFix_Uncertainties_gps_2ddata_2eproto}, {}};
 
-const ::google::protobuf::uint32 TableStruct_gps_2ddata_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_gps_2ddata_2eproto[3];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_gps_2ddata_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_gps_2ddata_2eproto = nullptr;
+
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gps_2ddata_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vutura::gps::Empty, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -120,22 +113,16 @@ const ::google::protobuf::uint32 TableStruct_gps_2ddata_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::vutura::gps::GPSFix, climb_),
   PROTOBUF_FIELD_OFFSET(::vutura::gps::GPSFix, uncertainties_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vutura::gps::Empty)},
   { 5, -1, sizeof(::vutura::gps::GPSFix_Uncertainties)},
   { 18, -1, sizeof(::vutura::gps::GPSFix)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::gps::_Empty_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::gps::_GPSFix_Uncertainties_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::vutura::gps::_GPSFix_default_instance_),
-};
-
-::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_gps_2ddata_2eproto = {
-  {}, AddDescriptors_gps_2ddata_2eproto, "gps-data.proto", schemas,
-  file_default_instances, TableStruct_gps_2ddata_2eproto::offsets,
-  file_level_metadata_gps_2ddata_2eproto, 3, file_level_enum_descriptors_gps_2ddata_2eproto, file_level_service_descriptors_gps_2ddata_2eproto,
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vutura::gps::_Empty_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vutura::gps::_GPSFix_Uncertainties_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vutura::gps::_GPSFix_default_instance_),
 };
 
 const char descriptor_table_protodef_gps_2ddata_2eproto[] =
@@ -156,25 +143,28 @@ const char descriptor_table_protodef_gps_2ddata_2eproto[] =
   "\0223\n\nSetGPSData\022\022.vutura.gps.GPSFix\032\021.vut"
   "ura.gps.Emptyb\006proto3"
   ;
-::google::protobuf::internal::DescriptorTable descriptor_table_gps_2ddata_2eproto = {
-  false, InitDefaults_gps_2ddata_2eproto, 
-  descriptor_table_protodef_gps_2ddata_2eproto,
-  "gps-data.proto", &assign_descriptors_table_gps_2ddata_2eproto, 621,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_gps_2ddata_2eproto_deps[1] = {
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gps_2ddata_2eproto_sccs[3] = {
+  &scc_info_Empty_gps_2ddata_2eproto.base,
+  &scc_info_GPSFix_gps_2ddata_2eproto.base,
+  &scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_gps_2ddata_2eproto_once;
+static bool descriptor_table_gps_2ddata_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_gps_2ddata_2eproto = {
+  &descriptor_table_gps_2ddata_2eproto_initialized, descriptor_table_protodef_gps_2ddata_2eproto, "gps-data.proto", 621,
+  &descriptor_table_gps_2ddata_2eproto_once, descriptor_table_gps_2ddata_2eproto_sccs, descriptor_table_gps_2ddata_2eproto_deps, 3, 0,
+  schemas, file_default_instances, TableStruct_gps_2ddata_2eproto::offsets,
+  file_level_metadata_gps_2ddata_2eproto, 3, file_level_enum_descriptors_gps_2ddata_2eproto, file_level_service_descriptors_gps_2ddata_2eproto,
 };
 
-void AddDescriptors_gps_2ddata_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
-  {
-  };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_gps_2ddata_2eproto, deps, 0);
-}
-
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_gps_2ddata_2eproto = []() { AddDescriptors_gps_2ddata_2eproto(); return true; }();
+static bool dynamic_init_dummy_gps_2ddata_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_gps_2ddata_2eproto), true);
 namespace vutura {
 namespace gps {
-const ::google::protobuf::EnumDescriptor* GPSFix_Status_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_gps_2ddata_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GPSFix_Status_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_gps_2ddata_2eproto);
   return file_level_enum_descriptors_gps_2ddata_2eproto[0];
 }
 bool GPSFix_Status_IsValid(int value) {
@@ -189,15 +179,15 @@ bool GPSFix_Status_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const GPSFix_Status GPSFix::notSeen;
-const GPSFix_Status GPSFix::noFix;
-const GPSFix_Status GPSFix::fix2D;
-const GPSFix_Status GPSFix::fix3D;
-const GPSFix_Status GPSFix::Status_MIN;
-const GPSFix_Status GPSFix::Status_MAX;
-const int GPSFix::Status_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr GPSFix_Status GPSFix::notSeen;
+constexpr GPSFix_Status GPSFix::noFix;
+constexpr GPSFix_Status GPSFix::fix2D;
+constexpr GPSFix_Status GPSFix::fix3D;
+constexpr GPSFix_Status GPSFix::Status_MIN;
+constexpr GPSFix_Status GPSFix::Status_MAX;
+constexpr int GPSFix::Status_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
@@ -211,12 +201,12 @@ class Empty::HasBitSetters {
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Empty::Empty()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:vutura.gps.Empty)
 }
 Empty::Empty(const Empty& from)
-  : ::google::protobuf::Message(),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:vutura.gps.Empty)
@@ -237,14 +227,14 @@ void Empty::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const Empty& Empty::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_Empty_gps_2ddata_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Empty_gps_2ddata_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void Empty::Clear() {
 // @@protoc_insertion_point(message_clear_start:vutura.gps.Empty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -252,48 +242,46 @@ void Empty::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Empty::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<Empty*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* Empty::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       default: {
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
+success:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool Empty::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:vutura.gps.Empty)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
   handle_unusual:
     if (tag == 0) {
       goto success;
     }
-    DO_(::google::protobuf::internal::WireFormat::SkipField(
+    DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
           input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
@@ -307,26 +295,26 @@ failure:
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void Empty::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:vutura.gps.Empty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:vutura.gps.Empty)
 }
 
-::google::protobuf::uint8* Empty::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Empty::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:vutura.gps.Empty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:vutura.gps.Empty)
@@ -339,27 +327,27 @@ size_t Empty::ByteSizeLong() const {
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void Empty::MergeFrom(const ::google::protobuf::Message& from) {
+void Empty::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:vutura.gps.Empty)
   GOOGLE_DCHECK_NE(&from, this);
   const Empty* source =
-      ::google::protobuf::DynamicCastToGenerated<Empty>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Empty>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:vutura.gps.Empty)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:vutura.gps.Empty)
     MergeFrom(*source);
@@ -370,12 +358,12 @@ void Empty::MergeFrom(const Empty& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:vutura.gps.Empty)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
 }
 
-void Empty::CopyFrom(const ::google::protobuf::Message& from) {
+void Empty::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:vutura.gps.Empty)
   if (&from == this) return;
   Clear();
@@ -402,9 +390,8 @@ void Empty::InternalSwap(Empty* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata Empty::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_gps_2ddata_2eproto);
-  return ::file_level_metadata_gps_2ddata_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Empty::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -428,12 +415,12 @@ const int GPSFix_Uncertainties::kClimbFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 GPSFix_Uncertainties::GPSFix_Uncertainties()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:vutura.gps.GPSFix.Uncertainties)
 }
 GPSFix_Uncertainties::GPSFix_Uncertainties(const GPSFix_Uncertainties& from)
-  : ::google::protobuf::Message(),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&time_, &from.time_,
@@ -460,14 +447,14 @@ void GPSFix_Uncertainties::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const GPSFix_Uncertainties& GPSFix_Uncertainties::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GPSFix_Uncertainties_gps_2ddata_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void GPSFix_Uncertainties::Clear() {
 // @@protoc_insertion_point(message_clear_start:vutura.gps.GPSFix.Uncertainties)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -478,108 +465,106 @@ void GPSFix_Uncertainties::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* GPSFix_Uncertainties::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<GPSFix_Uncertainties*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* GPSFix_Uncertainties::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 time = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_time(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .vutura.gps.GPSFix.Status status = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_status(static_cast<::vutura::gps::GPSFix_Status>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          set_status(static_cast<::vutura::gps::GPSFix_Status>(val));
+        } else goto handle_unusual;
+        continue;
       // float latitude = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 29) goto handle_unusual;
-        msg->set_latitude(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float longitude = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 37) goto handle_unusual;
-        msg->set_longitude(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float altitude = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 45) goto handle_unusual;
-        msg->set_altitude(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          altitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float track = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 53) goto handle_unusual;
-        msg->set_track(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          track_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float speed = 7;
-      case 7: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 61) goto handle_unusual;
-        msg->set_speed(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
+          speed_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float climb = 8;
-      case 8: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 69) goto handle_unusual;
-        msg->set_climb(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 69)) {
+          climb_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
+success:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool GPSFix_Uncertainties::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:vutura.gps.GPSFix.Uncertainties)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // uint64 time = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64>(
                  input, &time_)));
         } else {
           goto handle_unusual;
@@ -589,10 +574,10 @@ bool GPSFix_Uncertainties::MergePartialFromCodedStream(
 
       // .vutura.gps.GPSFix.Status status = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
           int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
           set_status(static_cast< ::vutura::gps::GPSFix_Status >(value));
         } else {
@@ -603,10 +588,10 @@ bool GPSFix_Uncertainties::MergePartialFromCodedStream(
 
       // float latitude = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (29 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (29 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &latitude_)));
         } else {
           goto handle_unusual;
@@ -616,10 +601,10 @@ bool GPSFix_Uncertainties::MergePartialFromCodedStream(
 
       // float longitude = 4;
       case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (37 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (37 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &longitude_)));
         } else {
           goto handle_unusual;
@@ -629,10 +614,10 @@ bool GPSFix_Uncertainties::MergePartialFromCodedStream(
 
       // float altitude = 5;
       case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (45 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (45 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &altitude_)));
         } else {
           goto handle_unusual;
@@ -642,10 +627,10 @@ bool GPSFix_Uncertainties::MergePartialFromCodedStream(
 
       // float track = 6;
       case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (53 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (53 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &track_)));
         } else {
           goto handle_unusual;
@@ -655,10 +640,10 @@ bool GPSFix_Uncertainties::MergePartialFromCodedStream(
 
       // float speed = 7;
       case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (61 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (61 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &speed_)));
         } else {
           goto handle_unusual;
@@ -668,10 +653,10 @@ bool GPSFix_Uncertainties::MergePartialFromCodedStream(
 
       // float climb = 8;
       case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (69 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (69 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &climb_)));
         } else {
           goto handle_unusual;
@@ -684,7 +669,7 @@ bool GPSFix_Uncertainties::MergePartialFromCodedStream(
         if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
               input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
@@ -701,108 +686,108 @@ failure:
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void GPSFix_Uncertainties::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:vutura.gps.GPSFix.Uncertainties)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 time = 1;
   if (this->time() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->time(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64(1, this->time(), output);
   }
 
   // .vutura.gps.GPSFix.Status status = 2;
   if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
       2, this->status(), output);
   }
 
   // float latitude = 3;
-  if (this->latitude() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->latitude(), output);
+  if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(3, this->latitude(), output);
   }
 
   // float longitude = 4;
-  if (this->longitude() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->longitude(), output);
+  if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(4, this->longitude(), output);
   }
 
   // float altitude = 5;
-  if (this->altitude() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->altitude(), output);
+  if (!(this->altitude() <= 0 && this->altitude() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(5, this->altitude(), output);
   }
 
   // float track = 6;
-  if (this->track() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->track(), output);
+  if (!(this->track() <= 0 && this->track() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(6, this->track(), output);
   }
 
   // float speed = 7;
-  if (this->speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->speed(), output);
+  if (!(this->speed() <= 0 && this->speed() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(7, this->speed(), output);
   }
 
   // float climb = 8;
-  if (this->climb() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->climb(), output);
+  if (!(this->climb() <= 0 && this->climb() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(8, this->climb(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:vutura.gps.GPSFix.Uncertainties)
 }
 
-::google::protobuf::uint8* GPSFix_Uncertainties::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GPSFix_Uncertainties::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:vutura.gps.GPSFix.Uncertainties)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 time = 1;
   if (this->time() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->time(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->time(), target);
   }
 
   // .vutura.gps.GPSFix.Status status = 2;
   if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       2, this->status(), target);
   }
 
   // float latitude = 3;
-  if (this->latitude() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->latitude(), target);
+  if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->latitude(), target);
   }
 
   // float longitude = 4;
-  if (this->longitude() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->longitude(), target);
+  if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->longitude(), target);
   }
 
   // float altitude = 5;
-  if (this->altitude() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->altitude(), target);
+  if (!(this->altitude() <= 0 && this->altitude() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->altitude(), target);
   }
 
   // float track = 6;
-  if (this->track() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->track(), target);
+  if (!(this->track() <= 0 && this->track() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->track(), target);
   }
 
   // float speed = 7;
-  if (this->speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->speed(), target);
+  if (!(this->speed() <= 0 && this->speed() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->speed(), target);
   }
 
   // float climb = 8;
-  if (this->climb() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->climb(), target);
+  if (!(this->climb() <= 0 && this->climb() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(8, this->climb(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:vutura.gps.GPSFix.Uncertainties)
@@ -815,70 +800,70 @@ size_t GPSFix_Uncertainties::ByteSizeLong() const {
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint64 time = 1;
   if (this->time() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->time());
   }
 
   // .vutura.gps.GPSFix.Status status = 2;
   if (this->status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->status());
   }
 
   // float latitude = 3;
-  if (this->latitude() != 0) {
+  if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float longitude = 4;
-  if (this->longitude() != 0) {
+  if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float altitude = 5;
-  if (this->altitude() != 0) {
+  if (!(this->altitude() <= 0 && this->altitude() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float track = 6;
-  if (this->track() != 0) {
+  if (!(this->track() <= 0 && this->track() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float speed = 7;
-  if (this->speed() != 0) {
+  if (!(this->speed() <= 0 && this->speed() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float climb = 8;
-  if (this->climb() != 0) {
+  if (!(this->climb() <= 0 && this->climb() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GPSFix_Uncertainties::MergeFrom(const ::google::protobuf::Message& from) {
+void GPSFix_Uncertainties::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:vutura.gps.GPSFix.Uncertainties)
   GOOGLE_DCHECK_NE(&from, this);
   const GPSFix_Uncertainties* source =
-      ::google::protobuf::DynamicCastToGenerated<GPSFix_Uncertainties>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GPSFix_Uncertainties>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:vutura.gps.GPSFix.Uncertainties)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:vutura.gps.GPSFix.Uncertainties)
     MergeFrom(*source);
@@ -889,7 +874,7 @@ void GPSFix_Uncertainties::MergeFrom(const GPSFix_Uncertainties& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:vutura.gps.GPSFix.Uncertainties)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.time() != 0) {
@@ -898,27 +883,27 @@ void GPSFix_Uncertainties::MergeFrom(const GPSFix_Uncertainties& from) {
   if (from.status() != 0) {
     set_status(from.status());
   }
-  if (from.latitude() != 0) {
+  if (!(from.latitude() <= 0 && from.latitude() >= 0)) {
     set_latitude(from.latitude());
   }
-  if (from.longitude() != 0) {
+  if (!(from.longitude() <= 0 && from.longitude() >= 0)) {
     set_longitude(from.longitude());
   }
-  if (from.altitude() != 0) {
+  if (!(from.altitude() <= 0 && from.altitude() >= 0)) {
     set_altitude(from.altitude());
   }
-  if (from.track() != 0) {
+  if (!(from.track() <= 0 && from.track() >= 0)) {
     set_track(from.track());
   }
-  if (from.speed() != 0) {
+  if (!(from.speed() <= 0 && from.speed() >= 0)) {
     set_speed(from.speed());
   }
-  if (from.climb() != 0) {
+  if (!(from.climb() <= 0 && from.climb() >= 0)) {
     set_climb(from.climb());
   }
 }
 
-void GPSFix_Uncertainties::CopyFrom(const ::google::protobuf::Message& from) {
+void GPSFix_Uncertainties::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:vutura.gps.GPSFix.Uncertainties)
   if (&from == this) return;
   Clear();
@@ -953,9 +938,8 @@ void GPSFix_Uncertainties::InternalSwap(GPSFix_Uncertainties* other) {
   swap(climb_, other->climb_);
 }
 
-::google::protobuf::Metadata GPSFix_Uncertainties::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_gps_2ddata_2eproto);
-  return ::file_level_metadata_gps_2ddata_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata GPSFix_Uncertainties::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -987,12 +971,12 @@ const int GPSFix::kUncertaintiesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 GPSFix::GPSFix()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:vutura.gps.GPSFix)
 }
 GPSFix::GPSFix(const GPSFix& from)
-  : ::google::protobuf::Message(),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_uncertainties()) {
@@ -1007,8 +991,7 @@ GPSFix::GPSFix(const GPSFix& from)
 }
 
 void GPSFix::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_GPSFix_gps_2ddata_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GPSFix_gps_2ddata_2eproto.base);
   ::memset(&uncertainties_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&climb_) -
       reinterpret_cast<char*>(&uncertainties_)) + sizeof(climb_));
@@ -1027,14 +1010,14 @@ void GPSFix::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const GPSFix& GPSFix::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_GPSFix_gps_2ddata_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GPSFix_gps_2ddata_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void GPSFix::Clear() {
 // @@protoc_insertion_point(message_clear_start:vutura.gps.GPSFix)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1049,124 +1032,113 @@ void GPSFix::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* GPSFix::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<GPSFix*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* GPSFix::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 time = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_time(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .vutura.gps.GPSFix.Status status = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_status(static_cast<::vutura::gps::GPSFix_Status>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          set_status(static_cast<::vutura::gps::GPSFix_Status>(val));
+        } else goto handle_unusual;
+        continue;
       // float latitude = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 29) goto handle_unusual;
-        msg->set_latitude(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float longitude = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 37) goto handle_unusual;
-        msg->set_longitude(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float altitude = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 45) goto handle_unusual;
-        msg->set_altitude(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          altitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float track = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 53) goto handle_unusual;
-        msg->set_track(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          track_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float speed = 7;
-      case 7: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 61) goto handle_unusual;
-        msg->set_speed(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
+          speed_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float climb = 8;
-      case 8: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 69) goto handle_unusual;
-        msg->set_climb(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
-        break;
-      }
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 69)) {
+          climb_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // .vutura.gps.GPSFix.Uncertainties uncertainties = 9;
-      case 9: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 74) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::vutura::gps::GPSFix_Uncertainties::_InternalParse;
-        object = msg->mutable_uncertainties();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          ptr = ctx->ParseMessage(mutable_uncertainties(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
+success:
   return ptr;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool GPSFix::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:vutura.gps.GPSFix)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // uint64 time = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64>(
                  input, &time_)));
         } else {
           goto handle_unusual;
@@ -1176,10 +1148,10 @@ bool GPSFix::MergePartialFromCodedStream(
 
       // .vutura.gps.GPSFix.Status status = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
           int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
           set_status(static_cast< ::vutura::gps::GPSFix_Status >(value));
         } else {
@@ -1190,10 +1162,10 @@ bool GPSFix::MergePartialFromCodedStream(
 
       // float latitude = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (29 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (29 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &latitude_)));
         } else {
           goto handle_unusual;
@@ -1203,10 +1175,10 @@ bool GPSFix::MergePartialFromCodedStream(
 
       // float longitude = 4;
       case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (37 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (37 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &longitude_)));
         } else {
           goto handle_unusual;
@@ -1216,10 +1188,10 @@ bool GPSFix::MergePartialFromCodedStream(
 
       // float altitude = 5;
       case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (45 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (45 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &altitude_)));
         } else {
           goto handle_unusual;
@@ -1229,10 +1201,10 @@ bool GPSFix::MergePartialFromCodedStream(
 
       // float track = 6;
       case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (53 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (53 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &track_)));
         } else {
           goto handle_unusual;
@@ -1242,10 +1214,10 @@ bool GPSFix::MergePartialFromCodedStream(
 
       // float speed = 7;
       case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (61 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (61 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &speed_)));
         } else {
           goto handle_unusual;
@@ -1255,10 +1227,10 @@ bool GPSFix::MergePartialFromCodedStream(
 
       // float climb = 8;
       case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (69 & 0xFF)) {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (69 & 0xFF)) {
 
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &climb_)));
         } else {
           goto handle_unusual;
@@ -1268,8 +1240,8 @@ bool GPSFix::MergePartialFromCodedStream(
 
       // .vutura.gps.GPSFix.Uncertainties uncertainties = 9;
       case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (74 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (74 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
                input, mutable_uncertainties()));
         } else {
           goto handle_unusual;
@@ -1282,7 +1254,7 @@ bool GPSFix::MergePartialFromCodedStream(
         if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
               input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
@@ -1299,121 +1271,121 @@ failure:
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void GPSFix::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:vutura.gps.GPSFix)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 time = 1;
   if (this->time() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->time(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64(1, this->time(), output);
   }
 
   // .vutura.gps.GPSFix.Status status = 2;
   if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
       2, this->status(), output);
   }
 
   // float latitude = 3;
-  if (this->latitude() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->latitude(), output);
+  if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(3, this->latitude(), output);
   }
 
   // float longitude = 4;
-  if (this->longitude() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->longitude(), output);
+  if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(4, this->longitude(), output);
   }
 
   // float altitude = 5;
-  if (this->altitude() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->altitude(), output);
+  if (!(this->altitude() <= 0 && this->altitude() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(5, this->altitude(), output);
   }
 
   // float track = 6;
-  if (this->track() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->track(), output);
+  if (!(this->track() <= 0 && this->track() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(6, this->track(), output);
   }
 
   // float speed = 7;
-  if (this->speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->speed(), output);
+  if (!(this->speed() <= 0 && this->speed() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(7, this->speed(), output);
   }
 
   // float climb = 8;
-  if (this->climb() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->climb(), output);
+  if (!(this->climb() <= 0 && this->climb() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(8, this->climb(), output);
   }
 
   // .vutura.gps.GPSFix.Uncertainties uncertainties = 9;
   if (this->has_uncertainties()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
       9, HasBitSetters::uncertainties(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:vutura.gps.GPSFix)
 }
 
-::google::protobuf::uint8* GPSFix::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GPSFix::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:vutura.gps.GPSFix)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 time = 1;
   if (this->time() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->time(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->time(), target);
   }
 
   // .vutura.gps.GPSFix.Status status = 2;
   if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       2, this->status(), target);
   }
 
   // float latitude = 3;
-  if (this->latitude() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->latitude(), target);
+  if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->latitude(), target);
   }
 
   // float longitude = 4;
-  if (this->longitude() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->longitude(), target);
+  if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->longitude(), target);
   }
 
   // float altitude = 5;
-  if (this->altitude() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->altitude(), target);
+  if (!(this->altitude() <= 0 && this->altitude() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->altitude(), target);
   }
 
   // float track = 6;
-  if (this->track() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->track(), target);
+  if (!(this->track() <= 0 && this->track() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->track(), target);
   }
 
   // float speed = 7;
-  if (this->speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->speed(), target);
+  if (!(this->speed() <= 0 && this->speed() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->speed(), target);
   }
 
   // float climb = 8;
-  if (this->climb() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->climb(), target);
+  if (!(this->climb() <= 0 && this->climb() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(8, this->climb(), target);
   }
 
   // .vutura.gps.GPSFix.Uncertainties uncertainties = 9;
   if (this->has_uncertainties()) {
-    target = ::google::protobuf::internal::WireFormatLite::
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessageToArray(
         9, HasBitSetters::uncertainties(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:vutura.gps.GPSFix)
@@ -1426,77 +1398,77 @@ size_t GPSFix::ByteSizeLong() const {
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .vutura.gps.GPSFix.Uncertainties uncertainties = 9;
   if (this->has_uncertainties()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *uncertainties_);
   }
 
   // uint64 time = 1;
   if (this->time() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->time());
   }
 
   // .vutura.gps.GPSFix.Status status = 2;
   if (this->status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->status());
   }
 
   // float latitude = 3;
-  if (this->latitude() != 0) {
+  if (!(this->latitude() <= 0 && this->latitude() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float longitude = 4;
-  if (this->longitude() != 0) {
+  if (!(this->longitude() <= 0 && this->longitude() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float altitude = 5;
-  if (this->altitude() != 0) {
+  if (!(this->altitude() <= 0 && this->altitude() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float track = 6;
-  if (this->track() != 0) {
+  if (!(this->track() <= 0 && this->track() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float speed = 7;
-  if (this->speed() != 0) {
+  if (!(this->speed() <= 0 && this->speed() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float climb = 8;
-  if (this->climb() != 0) {
+  if (!(this->climb() <= 0 && this->climb() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GPSFix::MergeFrom(const ::google::protobuf::Message& from) {
+void GPSFix::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:vutura.gps.GPSFix)
   GOOGLE_DCHECK_NE(&from, this);
   const GPSFix* source =
-      ::google::protobuf::DynamicCastToGenerated<GPSFix>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GPSFix>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:vutura.gps.GPSFix)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:vutura.gps.GPSFix)
     MergeFrom(*source);
@@ -1507,7 +1479,7 @@ void GPSFix::MergeFrom(const GPSFix& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:vutura.gps.GPSFix)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_uncertainties()) {
@@ -1519,27 +1491,27 @@ void GPSFix::MergeFrom(const GPSFix& from) {
   if (from.status() != 0) {
     set_status(from.status());
   }
-  if (from.latitude() != 0) {
+  if (!(from.latitude() <= 0 && from.latitude() >= 0)) {
     set_latitude(from.latitude());
   }
-  if (from.longitude() != 0) {
+  if (!(from.longitude() <= 0 && from.longitude() >= 0)) {
     set_longitude(from.longitude());
   }
-  if (from.altitude() != 0) {
+  if (!(from.altitude() <= 0 && from.altitude() >= 0)) {
     set_altitude(from.altitude());
   }
-  if (from.track() != 0) {
+  if (!(from.track() <= 0 && from.track() >= 0)) {
     set_track(from.track());
   }
-  if (from.speed() != 0) {
+  if (!(from.speed() <= 0 && from.speed() >= 0)) {
     set_speed(from.speed());
   }
-  if (from.climb() != 0) {
+  if (!(from.climb() <= 0 && from.climb() >= 0)) {
     set_climb(from.climb());
   }
 }
 
-void GPSFix::CopyFrom(const ::google::protobuf::Message& from) {
+void GPSFix::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:vutura.gps.GPSFix)
   if (&from == this) return;
   Clear();
@@ -1575,17 +1547,15 @@ void GPSFix::InternalSwap(GPSFix* other) {
   swap(climb_, other->climb_);
 }
 
-::google::protobuf::Metadata GPSFix::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_gps_2ddata_2eproto);
-  return ::file_level_metadata_gps_2ddata_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata GPSFix::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace gps
 }  // namespace vutura
-namespace google {
-namespace protobuf {
+PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::vutura::gps::Empty* Arena::CreateMaybeMessage< ::vutura::gps::Empty >(Arena* arena) {
   return Arena::CreateInternal< ::vutura::gps::Empty >(arena);
 }
@@ -1595,8 +1565,7 @@ template<> PROTOBUF_NOINLINE ::vutura::gps::GPSFix_Uncertainties* Arena::CreateM
 template<> PROTOBUF_NOINLINE ::vutura::gps::GPSFix* Arena::CreateMaybeMessage< ::vutura::gps::GPSFix >(Arena* arena) {
   return Arena::CreateInternal< ::vutura::gps::GPSFix >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 #include <google/protobuf/port_undef.inc>

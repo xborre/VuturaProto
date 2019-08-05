@@ -44,11 +44,19 @@ TagsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channe
 }
 
 void TagsService::Stub::experimental_async::GetTags(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTags_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTags_, context, request, response, std::move(f));
 }
 
 void TagsService::Stub::experimental_async::GetTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::TagsResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTags_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTags_, context, request, response, std::move(f));
+}
+
+void TagsService::Stub::experimental_async::GetTags(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::TagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTags_, context, request, response, reactor);
+}
+
+void TagsService::Stub::experimental_async::GetTags(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::TagsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTags_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::TagsResponse>* TagsService::Stub::AsyncGetTagsRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Empty& request, ::grpc::CompletionQueue* cq) {
@@ -64,11 +72,19 @@ void TagsService::Stub::experimental_async::GetTags(::grpc::ClientContext* conte
 }
 
 void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetTag_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetTag_, context, request, response, std::move(f));
 }
 
 void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetTag_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetTag_, context, request, response, std::move(f));
+}
+
+void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetTag_, context, request, response, reactor);
+}
+
+void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetTag_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::Empty>* TagsService::Stub::AsyncSetTagRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Obstacle& request, ::grpc::CompletionQueue* cq) {
@@ -84,11 +100,19 @@ void TagsService::Stub::experimental_async::SetTag(::grpc::ClientContext* contex
 }
 
 void TagsService::Stub::experimental_async::GetWarnings(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWarnings_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWarnings_, context, request, response, std::move(f));
 }
 
 void TagsService::Stub::experimental_async::GetWarnings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::CollisionWarnings* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWarnings_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWarnings_, context, request, response, std::move(f));
+}
+
+void TagsService::Stub::experimental_async::GetWarnings(::grpc::ClientContext* context, const ::vutura::obstacles::Empty* request, ::vutura::obstacles::CollisionWarnings* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetWarnings_, context, request, response, reactor);
+}
+
+void TagsService::Stub::experimental_async::GetWarnings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::CollisionWarnings* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetWarnings_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::CollisionWarnings>* TagsService::Stub::AsyncGetWarningsRaw(::grpc::ClientContext* context, const ::vutura::obstacles::Empty& request, ::grpc::CompletionQueue* cq) {
@@ -104,11 +128,19 @@ void TagsService::Stub::experimental_async::GetWarnings(::grpc::ClientContext* c
 }
 
 void TagsService::Stub::experimental_async::SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetWarning_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetWarning_, context, request, response, std::move(f));
 }
 
 void TagsService::Stub::experimental_async::SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetWarning_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetWarning_, context, request, response, std::move(f));
+}
+
+void TagsService::Stub::experimental_async::SetWarning(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetWarning_, context, request, response, reactor);
+}
+
+void TagsService::Stub::experimental_async::SetWarning(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::vutura::obstacles::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetWarning_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::vutura::obstacles::Empty>* TagsService::Stub::AsyncSetWarningRaw(::grpc::ClientContext* context, const ::vutura::obstacles::CollisionWarning& request, ::grpc::CompletionQueue* cq) {
