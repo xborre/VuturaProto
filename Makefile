@@ -5,9 +5,9 @@ SOURCE_DIR := ./protobuf
 all: cpp
 
 golang:
-	@mkdir -p $(SOURCE_DIR)/go
+	@mkdir -p $(SOURCE_DIR)/go/vutura
 	@for x in $(PROTO_FILES); do \
-		protoc -I$(PROTOS_DIR) --go_out=plugins=grpc,paths=source_relative:$(SOURCE_DIR)/go $$x; \
+		protoc -I$(PROTOS_DIR) --go_out=plugins=grpc,paths=source_relative:$(SOURCE_DIR)/go/vutura $$x; \
 	 done
 
 python:

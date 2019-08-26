@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package vutura.gps;
 
+option go_package = "github.com/xborre/VuturaProto/go/vutura/gps";
+
 // import "google/protobuf/empty.proto";
 
 service GPSService {
